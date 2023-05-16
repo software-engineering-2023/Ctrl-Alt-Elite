@@ -135,6 +135,16 @@
     width: 500px;
 }
 
+.about-desc {
+    display: block;
+}
+
+.about-desc1, .about-desc2, .about-desc3, .about-desc4 {
+    display: none;
+}
+
+/* hover buttons display text */
+
 .fulljustify {
     text-align:justify;
 }
@@ -225,6 +235,33 @@
 .app-download-img {
     height: 50px;
     width: auto;
+}
+
+.testimonials {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 125px;
+}
+
+.testimonials-title-text {
+    color: #2350B2;
+    font-size: 35px;
+    font-family: Ade;
+    line-height: 40px;
+    margin-top: 50px;
+}
+
+.slider {
+    width: 1100px;
+    height: 500px;
+    margin-top: 50px;
+    /* testing */
+    background-color: black;
+    opacity: 0.2;
 }
 
 .footer {
