@@ -1,0 +1,244 @@
+.landing-page {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-img {
+    margin-top: 100px;
+    width: 750px;
+    margin-left: 25px;
+    margin-bottom: 75px;
+}
+
+.join-login {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 900px;
+    margin-top: -50px;  
+}
+
+.slogan {
+    color: #2140a6;
+    font-size: 25px;
+    font-family: Graphik;
+    font-weight: lighter;
+    padding-right: 50px;
+}
+
+.join-button {
+    height: 40px;
+    width: 150px;
+    border-radius: 50px;
+    border-color: #2140a6;
+    background-color: white;
+    color: #2140a6;
+    font-family: Graphik;
+    font-weight: lighter;
+    font-size: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+.join-button:hover {
+    background-color: #2140a6;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.login-button {
+    height: 40px;
+    width: 150px;
+    border-radius: 50px;
+    border-color: #2140a6;
+    background-color: white;
+    color: #2140a6;
+    font-family: Graphik;
+    font-weight: lighter;
+    font-size: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+}
+
+.login-button:hover {
+    background-color: #2140a6;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.about {
+    width: 100%;
+    height: 950px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+.about-bank-img {
+    height: 20%;
+    margin-top: 75px;
+}
+
+.about-title {
+    width: 425px;
+    height: 125px;
+    background-color: transparent;
+    color: white;
+    font-size: 35px;
+    font-family: Graphik;
+    font-weight: bold;
+    line-height: 40px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.about-text {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 150px;
+    scale: 1.2;
+}
+
+.about-description {
+    margin-top: -20px;
+    color: white;
+    font-size: 20px;
+    font-family: Graphik;
+    font-weight: lighter;
+    line-height: 30px;
+    width: 500px;
+}
+
+.fulljustify {
+    text-align:justify;
+}
+.fulljustify:after {
+    content: "";
+    display: inline-block;
+    width: 100%;	
+}
+#tagline {
+    overflow: hidden;
+}
+
+.about-buttons:hover .about-button:not(:hover) {
+    scale: 0.95;
+}
+
+.about-button {
+    height: 60px;
+    width: 400px;
+    background-color: white;
+    color: #2140a6;
+    border-color: white;
+    border-radius: 15px;
+    border-width: 0px;
+    font-family: Graphik;
+    font-weight: lighter;
+    font-size: 20px;
+    opacity: 0.7;
+    transition: 200ms;
+}
+
+.about-button:hover {
+    opacity: 1;
+    transition: 200ms;
+    transform: translateX(30px);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}
+
+.testimonials {
+    margin-top: 300px;
+    width: 100%;
+    height: 500px;
+}
+
+.app {
+    background: linear-gradient(253.55deg, #2350B2 0.98%, #2EA6F6 88.77%);
+    width: 100%;
+    height: 250px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+
+.app-img {
+    width: 175px;
+    height: 175px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}
+
+.app-download {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: -25px;
+}
+
+.app-download-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.app-download-text {
+    color: white;
+    font-size: 30px;
+    font-family: Graphik;
+    font-weight: lighter;
+    line-height: 10px;
+}
+
+.app-download-img {
+    height: 50px;
+    width: auto;
+}
+
+.footer {
+    background-color: #131313;
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-icon {
+    width: auto;
+    height: 25px;
+}
