@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import '../css/landing-page.css';
+import '../css/landing-page-carousel.css';
 
 const LandingPage = () => {
+  
   return (
     <div className="landing-page">
       <div className="login">
         <div className="banner">
-            <img className="banner-img" src="res/banner.svg"/>
+            <img className="banner-img" src="res/banner.svg" alt="" />
         </div>
         <div>
             <div className="join-login">
@@ -18,8 +18,8 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="about">
-            <img className="about-background" src="res/wave.svg" />
-            <img className="about-bank-img" src="res/bank.svg" />
+            <img className="about-background" src="res/wave.svg" alt="" />
+            <img className="about-bank-img" src="res/bank.svg" alt="" />
             <button className="about-title">ENJOY A LUXURIOUS<br></br>USER EXPERIENCE</button>
             <br></br><br></br><br></br><br></br>
             <div className="about-text">
@@ -84,24 +84,24 @@ const LandingPage = () => {
         <div className="testimonials-title">
             <p className="testimonials-title-text">TESTIMONIALS</p>
         </div>
-        <div className="slider">
-          {/*  */}
+        <div className="testimonials-carousel">
+            
         </div>
       </div>
       <div className="app">
-        <img className="app-img" src="res/logo.png" />
+        <img className="app-img" src="res/logo.png" alt="" />
         <div className="app-download">
             <p className="app-download-text">Download our app.</p>
             <div className="app-download-icons">
-                <img className="app-download-img" src="res/appstore.svg" />
-                <img className="app-download-img" src="res/googleplay.svg" />
+                <img className="app-download-img" src="res/appstore.svg" alt="" />
+                <img className="app-download-img" src="res/googleplay.svg" alt="" />
             </div>
         </div>
       </div>
       <div className="footer">
-        <img className="footer-icon" src="res/ig.svg" />
-        <img className="footer-icon" src="res/fb.svg" />
-        <img className="footer-icon" src="res/mail.svg" style={{height:"20px"}} />
+        <img className="footer-icon" src="res/ig.svg" alt="" />
+        <img className="footer-icon" src="res/fb.svg" alt="" />
+        <img className="footer-icon" src="res/mail.svg" style={{height:"20px"}} alt="" />
       </div>
     </div>
   );
