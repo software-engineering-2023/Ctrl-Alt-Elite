@@ -24,18 +24,32 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [fade, setFade] = useState(false);
+  const [moveDirection, setMoveDirection] = useState(null);
 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === testimonials.length - 1 ? 0 : prevSlide + 1));
+    setFade(true);
+    setMoveDirection('move-next');
+    setTimeout(() => {
+      setCurrentSlide((prevSlide) => (prevSlide === testimonials.length - 1 ? 0 : prevSlide + 1));
+      setFade(false);
+      setMoveDirection(null);
+    }, 300);
   };
-
+  
   const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? testimonials.length - 1 : prevSlide - 1));
+    setFade(true);
+    setMoveDirection('move-prev');
+    setTimeout(() => {
+      setCurrentSlide((prevSlide) => (prevSlide === 0 ? testimonials.length - 1 : prevSlide - 1));
+      setFade(false);
+      setMoveDirection(null);
+    }, 300);
   };
 
   return (
     <div className="testimonial-carousel">
-      <div className="testimonial-card">
+      <div className={`testimonial-card${fade ? ' fade' : ''}${moveDirection ? ` ${moveDirection}` : ''}`}>
         <div className="testimonial-image-name">
           <img className="testimonial-card-pic" src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} />
           <h3>{testimonials[currentSlide].name}</h3>
