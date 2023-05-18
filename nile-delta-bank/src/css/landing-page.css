@@ -202,6 +202,7 @@
 }
 
 .testimonials {
+    margin-top: 100px;
     width: 100%;
     height: 800px;
     display: flex;
@@ -212,10 +213,10 @@
 
 .testimonials-title-text {
     color: #2350B2;
-    font-size: 35px;
+    font-size: 45px;
     font-family: Ade;
     line-height: 40px;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .testimonials-carousel {
@@ -223,8 +224,8 @@
     height: 500px;
     margin-top: 50px;
     /* testing */
-    background-color: black;
-    opacity: 0.2;
+    /* background-color: black;
+    opacity: 0.2; */
 }
 
 .app {

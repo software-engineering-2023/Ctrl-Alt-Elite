@@ -1,8 +1,8 @@
 import '../css/landing-page.css';
-import '../css/landing-page-carousel.css';
+import TestimonialCarousel from '../components/TestimonialCarousel';
 
 const LandingPage = () => {
-  
+
   return (
     <div className="landing-page">
       <div className="login">
@@ -85,7 +85,7 @@ const LandingPage = () => {
             <p className="testimonials-title-text">TESTIMONIALS</p>
         </div>
         <div className="testimonials-carousel">
-            
+          <TestimonialCarousel />
         </div>
       </div>
       <div className="app">
