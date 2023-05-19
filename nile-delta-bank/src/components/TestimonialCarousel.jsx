@@ -4,52 +4,59 @@ import '../css/testimonial-carousel.css'; // Create a CSS file for styling
 const testimonials = [
   {
     id: 1,
-    name: 'YOUSSEF HANY',
+    name: 'YOUSSEF HANY ',
     image: 'res/youssef-hany.svg',
     text: 'Love this! I never have to worry about missing a bill payment or overdrawing my account. Their notifications keep me on track.',
   },
   {
     id: 2,
-    name: 'FIRSTNAME LASTNAME',
-    image: 'res/youssef-hany.svg',
-    text: 'TEMP',
+    name: 'DAVID MARTINEZ',
+    image: 'res/david-martinez.jpg',
+    text: 'Managing my finances has never been simpler. Thanks, Nile Delta Bank!',
   },
   {
     id: 3,
-    name: 'FIRST NAME LAST NAME',
-    image: 'res/youssef-hany.svg',
-    text: 'TEMP2',
+    name: 'SAMANTHA DAVIS',
+    image: 'res/samantha-davis.jpg',
+    text: 'I\'ve been a Nile Delta Bank customer for years, and I can confidently say that their customer service is unbeatable. They always go above and beyond.',
+  },
+  {
+    id: 4,
+    name: 'ALEXANDER LEE',
+    image: 'res/alexander-lee.jpg',
+    text: 'Banking made easy. Nile Delta Bank\'s app is a game changer.',
+  },
+  {
+    id: 5,
+    name: 'MADISON TAYLOR',
+    image: 'res/madison-taylor.jpg',
+    text: 'I love the convenience of being able to manage my finances from my phone. Nile Delta Bank\'s mobile app makes banking on the go a breeze!',
   }
 ];
 
 const TestimonialCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [fade, setFade] = useState(false);
   const [moveDirection, setMoveDirection] = useState(null);
 
   const nextSlide = () => {
-    setFade(true);
     setMoveDirection('move-next');
     setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide === testimonials.length - 1 ? 0 : prevSlide + 1));
-      setFade(false);
-      setMoveDirection(null);
+      setCurrentSlide((currSlide) => (currSlide === testimonials.length - 1 ? 0 : currSlide + 1));
+      setMoveDirection('move-next-new');
     }, 300);
   };
   
   const prevSlide = () => {
-    setFade(true);
     setMoveDirection('move-prev');
     setTimeout(() => {
-      setCurrentSlide((prevSlide) => (prevSlide === 0 ? testimonials.length - 1 : prevSlide - 1));
-      setFade(false);
-      setMoveDirection(null);
+      setCurrentSlide((currSlide) => (currSlide === 0 ? testimonials.length - 1 : currSlide - 1));
+      setMoveDirection('move-prev-new');
     }, 300);
   };
 
   return (
     <div className="testimonial-carousel">
-      <div className={`testimonial-card${fade ? ' fade' : ''}${moveDirection ? ` ${moveDirection}` : ''}`}>
+      <div className={`testimonial-card${moveDirection ? ` ${moveDirection}` : ''}`}>
         <div className="testimonial-image-name">
           <img className="testimonial-card-pic" src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} />
           <h3>{testimonials[currentSlide].name}</h3>

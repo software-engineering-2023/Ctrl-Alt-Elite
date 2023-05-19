@@ -5,19 +5,19 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <div className="login">
+      <section className="login">
         <div className="banner">
             <img className="banner-img" src="res/banner.svg" alt="" />
         </div>
         <div>
             <div className="join-login">
                 <p className="slogan">Online Banking Made Easy.</p>
-                <button className="join-button">JOIN NOW</button>
-                <button className="login-button">LOGIN</button>
+                <button className="button join-button">JOIN NOW</button>
+                <button className="button login-button">LOGIN</button>
             </div>
         </div>
-      </div>
-      <div className="about">
+      </section>
+      <section className="about">
             <img className="about-background" src="res/wave.svg" alt="" />
             <img className="about-bank-img" src="res/bank.svg" alt="" />
             <button className="about-title">ENJOY A LUXURIOUS<br></br>USER EXPERIENCE</button>
@@ -79,16 +79,16 @@ const LandingPage = () => {
                   </div>
                 </div>
             </div>
-      </div>
-      <div className="testimonials">
+      </section>
+      <section className="testimonials">
         <div className="testimonials-title">
             <p className="testimonials-title-text">TESTIMONIALS</p>
         </div>
         <div className="testimonials-carousel">
           <TestimonialCarousel />
         </div>
-      </div>
-      <div className="app">
+      </section>
+      <section className="app">
         <img className="app-img" src="res/logo.png" alt="" />
         <div className="app-download">
             <p className="app-download-text">Download our app.</p>
@@ -97,12 +97,12 @@ const LandingPage = () => {
                 <img className="app-download-img" src="res/googleplay.svg" alt="" />
             </div>
         </div>
-      </div>
-      <div className="footer">
+      </section>
+      <section className="footer">
         <img className="footer-icon" src="res/ig.svg" alt="" />
         <img className="footer-icon" src="res/fb.svg" alt="" />
         <img className="footer-icon" src="res/mail.svg" style={{height:"20px"}} alt="" />
-      </div>
+      </section>
     </div>
   );
 };

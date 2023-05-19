@@ -41,49 +41,40 @@
 }
 
 .join-button {
-    height: 50px;
-    width: 175px;
-
-    padding: 2.5px;
-    border: 3px transparent;
     border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #2350B2 , #2EA6F6);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-
-    background-color: white;
-    color: #2140a6;
-    font-family: Graphik;
-    font-weight: lighter;
-    font-size: 15px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
-}
-
-.join-button:hover {
-    transition: 0.5s;
-    cursor: pointer;
+    
 }
 
 .login-button {
-    height: 50px;
-    width: 175px;
-
-    padding: 2.5px;
-    border: 3px transparent;
     border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #EF8E8E , #2EA6F6);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-
-    background-color: white;
-    color: #2140a6;
-    font-family: Graphik;
-    font-weight: lighter;
-    font-size: 15px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
 }
 
-.login-button:hover {
-    transition: 0.5s;
+.button {
+    height: 60px;
+    width: 175px;
+    padding: 2.5px;
+    color: #2140a6;
+    border: 3px transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-color: white;
+    font-family: Graphik;
+    font-weight: 200;
+    font-size: 20px;
+    transition: 200ms;
     cursor: pointer;
+    /* -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15); */
+}
+
+.button:hover {
+    /* transition: 0.5s; */
+    transform: translate(0px, -5px);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+}
+
+.button:active {
+    transform: translate(0px, 0px);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 }
 
 .about {
