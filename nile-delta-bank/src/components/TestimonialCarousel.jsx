@@ -4,7 +4,7 @@ import '../css/testimonial-carousel.css'; // Create a CSS file for styling
 const testimonials = [
   {
     id: 1,
-    name: 'YOUSSEF HANY ',
+    name: 'YOUSSEF HANY',
     image: 'res/youssef-hany.svg',
     text: 'Love this! I never have to worry about missing a bill payment or overdrawing my account. Their notifications keep me on track.',
   },
@@ -63,7 +63,7 @@ const TestimonialCarousel = () => {
         </div>
         <div className="testimonial-text-rating">
           <img className="rating" src="res/rating4.svg" alt="" />
-          <p id="tagline" class="fulljustify">{testimonials[currentSlide].text}</p>
+          <p id="tagline-testimonial" class="fulljustify">{testimonials[currentSlide].text}</p>
         </div>
       </div>
       <div className="arrows">

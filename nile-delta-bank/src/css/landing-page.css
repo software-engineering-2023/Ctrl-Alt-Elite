@@ -1,3 +1,12 @@
+
+section {
+    margin-bottom: 10rem;
+}
+
+html {
+    font-size: 10px;
+}
+
 .landing-page {
     width: auto;
     display: flex;
@@ -11,14 +20,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 5rem;
 }
 
 .banner-img {
-    margin-top: 100px;
-    width: 750px;
-    margin-left: 25px;
-    margin-bottom: 75px;
+    margin-top: 10rem;
+    width: 100rem;
+    margin-left: 2.5rem;
+    margin-bottom: 7.5rem;
 }
 
 .join-login {
@@ -26,41 +35,42 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 25px;
-    width: 900px;
-    margin-top: 0px;  
-    margin-bottom: 190px;
+    gap: 2.5rem;
+    width: 90rem;
+    margin-top: 0;  
+    margin-bottom: 19rem;
 }
 
 .slogan {
     color: #2140a6;
-    font-size: 25px;
+    font-size: 3.5rem;
     font-family: Graphik;
     font-weight: lighter;
-    padding-right: 50px;
+    padding-right: 5rem;
 }
 
 .join-button {
-    border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #2350B2 , #2EA6F6);
+     background-image: linear-gradient(white, white), linear-gradient(to right, #2350B2 , #2EA6F6);
     
 }
 
 .login-button {
-    border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #EF8E8E , #2EA6F6);
+    background-image: linear-gradient(white, white), linear-gradient(to right, #EF8E8E , #2EA6F6);
 }
 
 .button {
-    height: 60px;
-    width: 175px;
-    padding: 2.5px;
+    height: 7rem;
+    width: 25rem;
+    border-radius: 10rem;
+    padding: 0.25rem;
     color: #2140a6;
-    border: 3px transparent;
+    border: 0.3rem transparent;
     background-origin: border-box;
     background-clip: content-box, border-box;
     background-color: white;
     font-family: Graphik;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 2rem;
     transition: 200ms;
     cursor: pointer;
     /* -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15); */
@@ -68,19 +78,19 @@
 
 .button:hover {
     /* transition: 0.5s; */
-    transform: translate(0px, -5px);
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    transform: translate(0, -0.5rem);
+    -webkit-box-shadow: 0 0 2rem 0 rgba(0,0,0,0.25);
 }
 
 .button:active {
-    transform: translate(0px, 0px);
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    transform: translate(0, 0);
+    -webkit-box-shadow: 0 0 1rem 0 rgba(0,0,0,0.5);
 }
 
 .about {
     width: 100%;
-    height: 950px;
-    margin-top: 100px;
+    height: 95rem;
+    /* margin-top: 100px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,48 +101,49 @@
     z-index: -1;
     width: 100%;
     height: auto;
-    max-width: 2000px;
+    max-width: 200rem;
 }
 
 .about-bank-img {
     height: 20%;
-    margin-top: 75px;
+    margin-top: 7.5rem;
 }
 
 .about-title {
-    width: 425px;
-    height: 125px;
+    width: 42.5rem;
+    height: 12.5rem;
     background-color: transparent;
+    padding: 2rem;
     color: white;
-    font-size: 35px;
+    font-size: 3.5rem;
     font-family: Graphik;
     font-weight: bold;
-    line-height: 40px;
-    margin-top: 50px;
-    border-radius: 20px;
+    line-height: 4rem;
+    margin-top: 5rem;
+    border-radius: 2rem;
     border-color: white;
     border-style: solid;
-    border-width: 3px;
+    border-width: 0.3rem;
 }
 
 .about-text {
-    margin-top: 0px;
+    margin-top: 8rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start;
-    gap: 150px;
+    justify-content: center;
+    gap: 15rem;
     /* scale: 1.2; */
 }
 
 .about-description {
-    margin-top: -20px;
+    margin-top: -2rem;
     color: white;
-    font-size: 20px;
+    font-size: 2rem;
     font-family: Graphik;
     font-weight: lighter;
-    line-height: 30px;
-    width: 500px;
+    line-height: 3rem;
+    width: 50rem;
 }
 
 .about-desc {
@@ -147,14 +158,17 @@
 
 .fulljustify {
     text-align:justify;
+    overflow: hidden;
+    font-size: 3rem;
+    font-weight: 200;
+    text-align-last: left;
+    line-height: 1.5;
+    transition: all 300ms;
 }
 .fulljustify:after {
     content: "";
     display: inline-block;
     width: 100%;	
-}
-#tagline {
-    overflow: hidden;
 }
 
 .about-buttons:hover .about-button:not(:hover) {
@@ -162,46 +176,47 @@
 }
 
 .about-button {
-    height: 60px;
-    width: 400px;
+    height: 10rem;
+    width: 70rem;
     background-color: white;
     color: #2140a6;
     border-color: white;
-    border-radius: 15px;
-    border-width: 0px;
+    border-radius: 1.5rem;
+    border-width: 0;
     font-family: Graphik;
-    font-weight: lighter;
-    font-size: 20px;
+    font-weight: 200;
+    font-size: 2.5rem;
     opacity: 0.7;
     transition: 200ms;
+    margin-bottom: 1.5rem;
 }
 
 .about-button:hover {
     opacity: 1;
     transition: 200ms;
-    transform: translateX(30px);
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    transform: translateX(3rem);
+    -webkit-box-shadow: 0 0 2rem 0 rgba(0,0,0,0.25);
 }
 
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 190rem) {
     .about {
-        height: 1200px;
-        margin-bottom: 300px;
+        height: 120rem;
+        margin-bottom: 30rem;
     }
     .about-bank-img, .about-title, .about-text {
         scale: 1.5;
-        margin-top: 150px;
+        margin-top: 15rem;
     }
     .about-title {
-        width: 450px;
-        height: 150px;
+        width: 45rem;
+        height: 15rem;
     }
 }
 
 .testimonials {
-    margin-top: 100px;
+    margin-top: 20rem;
     width: 100%;
-    height: 800px;
+    height: 80rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,16 +225,16 @@
 
 .testimonials-title-text {
     color: #2350B2;
-    font-size: 45px;
+    font-size: 4.5rem;
     font-family: Ade;
-    line-height: 40px;
-    margin-top: 100px;
+    line-height: 4rem;
+    margin-top: 10rem;
 }
 
 .testimonials-carousel {
-    width: 1100px;
-    height: 500px;
-    margin-top: 50px;
+    width: 110rem;
+    height: 50rem;
+    margin-top: 5rem;
     /* testing */
     /* background-color: black;
     opacity: 0.2; */
@@ -228,20 +243,20 @@
 .app {
     background: linear-gradient(253.55deg, #2350B2 0.98%, #2EA6F6 88.77%);
     width: 100%;
-    height: 250px;
-    margin-top: 100px;
+    height: 25rem;
+    margin-bottom: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 150px;
+    gap: 15rem;
 }
 
 .app-img {
-    width: 175px;
-    height: 175px;
-    border-radius: 50px;
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.25);
+    width: 17rem;
+    height: 17rem;
+    border-radius: 5rem;
+    -webkit-box-shadow: 0 0 2rem 0 rgba(0,0,0,0.25);
 }
 
 .app-download {
@@ -249,7 +264,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-top: -25px;
+    margin-top: -2.5rem;
 }
 
 .app-download-icons {
@@ -257,34 +272,37 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 2.5rem;
 }
 
 .app-download-text {
     color: white;
-    font-size: 30px;
+    font-size: 4rem;
     font-family: Graphik;
-    font-weight: lighter;
-    line-height: 10px;
+    font-weight: 200;
+    line-height: 1rem;
 }
 
 .app-download-img {
-    height: 50px;
+    height: 7rem;
     width: auto;
 }
 
 .footer {
     background-color: #131313;
     width: 100%;
-    height: 75px;
+    height: 7.5rem;
     display: flex;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 2.5rem;
 }
 
 .footer-icon {
     width: auto;
-    height: 25px;
+    height: 3.5rem;
 }
