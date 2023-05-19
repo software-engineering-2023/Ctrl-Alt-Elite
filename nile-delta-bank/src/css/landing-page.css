@@ -29,7 +29,7 @@
     gap: 25px;
     width: 900px;
     margin-top: 0px;  
-    margin-bottom: 150px;
+    margin-bottom: 190px;
 }
 
 .slogan {
@@ -41,10 +41,15 @@
 }
 
 .join-button {
-    height: 40px;
-    width: 150px;
-    border-radius: 50px;
-    border-color: #2140a6;
+    height: 50px;
+    width: 175px;
+
+    padding: 2.5px;
+    border: 3px transparent;
+    border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #2350B2 , #2EA6F6);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
     background-color: white;
     color: #2140a6;
     font-family: Graphik;
@@ -54,17 +59,20 @@
 }
 
 .join-button:hover {
-    background-color: #2140a6;
-    color: white;
     transition: 0.5s;
     cursor: pointer;
 }
 
 .login-button {
-    height: 40px;
-    width: 150px;
-    border-radius: 50px;
-    border-color: #2140a6;
+    height: 50px;
+    width: 175px;
+
+    padding: 2.5px;
+    border: 3px transparent;
+    border-radius: 30px; background-image: linear-gradient(white, white), linear-gradient(to right, #EF8E8E , #2EA6F6);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
     background-color: white;
     color: #2140a6;
     font-family: Graphik;
@@ -74,8 +82,6 @@
 }
 
 .login-button:hover {
-    background-color: #2140a6;
-    color: white;
     transition: 0.5s;
     cursor: pointer;
 }
