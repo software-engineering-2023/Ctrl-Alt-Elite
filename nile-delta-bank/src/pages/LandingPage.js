@@ -12,7 +12,7 @@ const LandingPage = () => {
         <div className="banner">
             <img className="banner-img" src="res/banner.svg" alt="" />
         </div>
-        <div>
+        <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
             <div className="join-login">
                 <p className="slogan">Online Banking Made Easy.</p>
                 <button className="button join-button">JOIN NOW</button>
