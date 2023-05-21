@@ -5,6 +5,17 @@ import about_text from '../data/about';
 
 const LandingPage = () => {
   const [currentAbout, setCurrentAbout] = useState(0);
+  const [fader, setFader] = useState("fadeIn");
+  
+  const changeDescription = (index) => {
+    setFader('fadeOut'); // Start fading out
+
+    // Simulate some delay for the fade-out animation
+    setTimeout(() => {
+      setCurrentAbout(index);
+      setFader('fadeIn'); // Start fading in
+    }, 500); // Adjust the delay as needed
+  };
 
   return (
     <div className="landing-page">
@@ -28,20 +39,20 @@ const LandingPage = () => {
             <div className="about-text">
                 <div className="about-buttons">
                     <div className="button1">
-                      <button className="about-button" onMouseOver={() => setCurrentAbout(1)} onMouseLeave={() => setCurrentAbout(0)}>Highest class security</button><br></br><br></br>
+                      <button className="about-button" onMouseOver={() => changeDescription(1)} onMouseLeave={() => changeDescription(0)}>Highest class security</button><br></br><br></br>
                     </div>
                     <div className="button2">
-                      <button className="about-button" onMouseOver={() => setCurrentAbout(2)} onMouseLeave={() => setCurrentAbout(0)}>24/7 Instant customer service</button><br></br><br></br>
+                      <button className="about-button" onMouseOver={() => changeDescription(2)} onMouseLeave={() => changeDescription(0)}>24/7 Instant customer service</button><br></br><br></br>
                     </div>
                     <div className="button3">
-                      <button className="about-button" onMouseOver={() => setCurrentAbout(3)} onMouseLeave={() => setCurrentAbout(0)}>Be notified and reminded of events</button><br></br><br></br>
+                      <button className="about-button" onMouseOver={() => changeDescription(3)} onMouseLeave={() => changeDescription(0)}>Be notified and reminded of events</button><br></br><br></br>
                     </div>
                     <div className="button4">
-                      <button className="about-button" onMouseOver={() => setCurrentAbout(4)} onMouseLeave={() => setCurrentAbout(0)}>Pay bills and loans from home</button><br></br>
+                      <button className="about-button" onMouseOver={() => changeDescription(4)} onMouseLeave={() => changeDescription(0)}>Pay bills and loans from home</button><br></br>
                     </div>
                 </div>
                 <div className="about-description">
-                  <div className="about-desc">
+                  <div className={`about-desc ${fader}`}>
                     <p id="tagline" class="fulljustify">
                     {
                       about_text[currentAbout]

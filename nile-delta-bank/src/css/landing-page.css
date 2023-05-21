@@ -149,11 +149,35 @@ html {
     display: block;
 }
 
-.about-desc1, .about-desc2, .about-desc3, .about-desc4 {
-    display: none;
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
 }
 
-/* hover buttons display text */
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 .fulljustify {
     text-align:justify;
