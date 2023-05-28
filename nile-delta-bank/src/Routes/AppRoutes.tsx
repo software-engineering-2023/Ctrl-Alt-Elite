@@ -5,7 +5,14 @@ const AppRoutes = () => {
     return (
         <Routes>
             {
-                routes.map(({path, element}, index) => {
+                routes.map(({path, element, parent}, index) => {
+                    if (parent) {
+                        return (
+                            <Route key={index} element={parent}>
+                                <Route path={path} element={element} />
+                            </Route>
+                        )
+                    }
                     return (
                         <Route key={index} path={path} element={element} />
                     )
