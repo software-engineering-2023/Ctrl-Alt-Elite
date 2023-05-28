@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../../Store/slices/auth-slice";
 import { Navigate } from "react-router-dom";
+import NavMenu from "../../../components/NavMenu";
 
 const Login = () => {
     const dispatch = useDispatch();

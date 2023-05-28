@@ -288,7 +288,8 @@ section {
     font-size: 4rem;
     font-family: Graphik;
     font-weight: 200;
-    line-height: 1rem;
+    /* line-height: 1rem; */
+    margin-bottom: 2rem;
 }
 
 .app-download-img {

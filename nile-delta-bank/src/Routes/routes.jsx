@@ -1,26 +1,65 @@
-import { HOME_PATH, LOGIN_PATH, REGISTER_PATH , CLIENT_PATH} from "./paths";
+import * as Routes from "./paths";
 import Login from "../Screens/Auth/Login";
 import Register from "../Screens/Auth/Register";
 import HomePage from "../Screens/Home";
 import LandingPage from "../Screens/Landing Page/LandingPage"
 import ClientPage from "../Screens/Client Page/ClientPage"
+import ProtectedRoutes from "./ProtectedRoutes";
 
 export const routes = [
     {
-        path: HOME_PATH,
+        path: Routes.HOME_PATH,
         element: <LandingPage />
     },
     {
-        path: LOGIN_PATH,
-        element: <Login />
+        path: Routes.LOGIN_PATH,
+        element: <Login />,
+        parent: <ProtectedRoutes />
     },
     {
-        path: REGISTER_PATH,
+        path: Routes.REGISTER_PATH,
         element: <Register />
     },
     {
-        path: CLIENT_PATH,
+        path: Routes.CLIENT_PATH,
         element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+
+    {
+        path: Routes.CLIENT_MY_ACCOUNTS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_CREDIT_CARDS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_LOANS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_PAY_BILLS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_REPORT,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_NOTIFICATIONS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
+    },
+    {
+        path: Routes.CLIENT_SETTINGS,
+        element: <ClientPage />,
+        parent: <ProtectedRoutes />
     },
    
 ]
