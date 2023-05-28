@@ -36,10 +36,11 @@ const LandingPage = () => {
         </div>
       </section>
       <section className="about">
-            <img className="about-background" src="res/wave.svg" alt="" />
+            <img className="about-background" src="res/wave.svg" />
+            <br></br>
             <img className="about-bank-img" src="res/bank.svg" alt="" />
             <button className="about-title">ENJOY A LUXURIOUS<br></br>USER EXPERIENCE</button>
-            <br></br><br></br><br></br><br></br>
+            <br></br><br></br>
             <div className="about-text">
                 <div className="about-buttons">
                     <div className="button1">
@@ -66,6 +67,7 @@ const LandingPage = () => {
                 </div>
             </div>
       </section>
+      <br></br><br></br><br></br>
       <section className="testimonials">
         <div className="testimonials-title">
             <p className="testimonials-title-text">TESTIMONIALS</p>
