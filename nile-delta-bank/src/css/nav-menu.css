@@ -35,6 +35,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 2.5rem;
 }
 
 /* A elements that don't have a class get default styles */
@@ -204,13 +205,41 @@ select {
   border-top: 0.01rem solid #CACACA;
   width: 100%;
   margin-top: 2.5rem;
+  margin-bottom: 0;
 }
 
-.main_page_body {
+.panel_divider {
+  margin-bottom: 2.5rem;
+}
+
+.main_page_right {
   margin-left: 25vw;
   width: 75vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.main_page_right_body {
   padding-left: 10rem;
+}
+
+.main_page_right h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8rem;
+  font-weight: 200;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+  color: #2350B2;
+}
+
+.main_page_header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+}
+
+.scrollable_body {
+  margin-top: 20rem;
 }

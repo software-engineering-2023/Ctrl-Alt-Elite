@@ -2,7 +2,7 @@ import React from 'react';
 import NavMenu from '../../components/NavMenu';
 // import {useFormik} from 'formik';
 
-const ClientPage = () => {
+const PayBills = () => {
   // const formik = useFormik({
   //   initialValues: {
   //     firstName: '',
@@ -10,8 +10,8 @@ const ClientPage = () => {
   //   }
   // });
   return <div>
-      <h1 style={{marginTop: 50}}>msa2 el5eir</h1>
+      <p style={{marginTop: 50}}>Pay Bills Body</p>
   </div>;
 }
 
-export default ClientPage;
+export default PayBills;
