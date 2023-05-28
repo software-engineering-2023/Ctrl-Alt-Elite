@@ -1,13 +1,14 @@
-import { HOME_PATH, LOGIN_PATH, REGISTER_PATH , LANDING_PATH} from "./paths";
+import { HOME_PATH, LOGIN_PATH, REGISTER_PATH , CLIENT_PATH} from "./paths";
 import Login from "../Screens/Auth/Login";
 import Register from "../Screens/Auth/Register";
 import HomePage from "../Screens/Home";
-import LandingPage from "../pages/LandingPage"
+import LandingPage from "../Screens/Landing Page/LandingPage"
+import ClientPage from "../Screens/Client Page/ClientPage"
 
 export const routes = [
     {
         path: HOME_PATH,
-        element: <HomePage />
+        element: <LandingPage />
     },
     {
         path: LOGIN_PATH,
@@ -18,7 +19,8 @@ export const routes = [
         element: <Register />
     },
     {
-        path: LANDING_PATH,
-        element: <LandingPage />
-    }
+        path: CLIENT_PATH,
+        element: <ClientPage />,
+    },
+   
 ]

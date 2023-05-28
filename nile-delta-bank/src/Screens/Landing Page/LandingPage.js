@@ -1,7 +1,7 @@
-import '../css/landing-page.css';
+import '../../css/landing-page.css';
 import React, { useState } from 'react';
-import TestimonialCarousel from '../components/TestimonialCarousel';
-import about_text from '../data/about';
+import TestimonialCarousel from '../../components/TestimonialCarousel';
+import about_text from '../../data/about';
 
 const LandingPage = () => {
   const [currentAbout, setCurrentAbout] = useState(0);
@@ -14,7 +14,7 @@ const LandingPage = () => {
     setTimeout(() => {
       setCurrentAbout(index);
       setFader('fadeIn'); // Start fading in
-    }, 500); // Adjust the delay as needed
+    }, 200); // Adjust the delay as needed
   };
 
   return (
