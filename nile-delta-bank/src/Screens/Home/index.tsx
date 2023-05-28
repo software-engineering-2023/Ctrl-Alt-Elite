@@ -1,14 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../../Store/slices/auth-slice";
+
 import Login from "../Auth/Login";
 import { Navigate } from "react-router-dom";
 
 const HomePage = () => {
-    const dispatch = useDispatch();
-    const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+    const isLoggedIn = true;
 
     const handleLogout = () => {
-        dispatch(authActions.logout());
     }
 
     return (
