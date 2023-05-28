@@ -1,6 +1,9 @@
 import { Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 const Login = () => {
-    const isLoggedIn = true;
+    const dispatch = useDispatch();
+
+    const { user, isLoggedIn } = useSelector((state: any) => state.auth);
     
     const handleLogin = () => {
         
@@ -13,8 +16,9 @@ const Login = () => {
                     <Navigate to="/" />
                 ) : (
                     <> 
-                        <h1>Login Page</h1>
-                         <button className="bg-red-400 p-2" onClick={handleLogin}>Login</button>
+                        <Navigate to="/register" />
+                        {/* <h1>Login Page</h1>
+                         <button className="bg-red-400 p-2" onClick={handleLogin}>Login</button> */}
                     </>
                 )
             }
