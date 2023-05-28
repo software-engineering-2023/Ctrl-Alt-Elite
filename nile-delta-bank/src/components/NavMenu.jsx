@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
-import { get, set } from 'mongoose';
 // import { use } from 'express/lib/router';
 
 function NavMenu({ children }) {
