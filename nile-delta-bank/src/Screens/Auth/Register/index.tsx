@@ -17,26 +17,13 @@ const Register = () => {
                             <h1 className="kalam-big">Registration</h1>
                             <p className="kalam-small">Join Nile Delta Bank!</p>
                         </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "column",
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    rowGap: 3
-                                }}
-                            >
-                            </div>
-                            <Input></Input>
+                        <div className="w-1/2 flex flex-col">
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
