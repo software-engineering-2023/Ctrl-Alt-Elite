@@ -3,7 +3,7 @@ import { Input } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import UserRegistrationModel from "../../../models/userRegistrationModel";
-import CustomButton from "../../../Components/CustomButton";
+import CustomButton from "../../../components/CustomButton";
 import { useDispatch, useSelector } from "react-redux";
 import { loginAction } from "../../../redux/actions/loginAction";
 import { RootState } from "../../../redux";
