@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom"
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import NavMenu from '../components/NavMenu';
 
-const ProtectedRoutes = () => {
-    return (
-        <Outlet />
-    );
+function ProtectedRoutes() {
+  return (
+    <NavMenu>
+      <Outlet />
+    </NavMenu>
+  )
 }
 
-export default ProtectedRoutes;
+export default ProtectedRoutes
