@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
 // import { use } from 'express/lib/router';
 
-function NavMenu({ children }) {
-  const getPageTitle = (path) => {
+function NavMenu({ children }: {children: any}) {
+  const getPageTitle = (path: string) => {
     switch (path) {
       case Routes.CLIENT_MY_ACCOUNTS:
         return "My Accounts";
@@ -25,7 +25,7 @@ function NavMenu({ children }) {
     }
   }
 
-  const getIndex = (path) => {
+  const getIndex = (path: string) => {
     switch (path) {
       case Routes.CLIENT_MY_ACCOUNTS:
         return 0;
@@ -48,7 +48,7 @@ function NavMenu({ children }) {
   const [pageTitle, setPageTitle] = useState(getPageTitle(window.location.pathname));
   const navigate = useNavigate();
 
-  const handleTabClick = (index, route, newTitle) => {
+  const handleTabClick = (index: number, route: string, newTitle: string) => {
     setActiveTab(index);
     setPageTitle(newTitle);
     navigate(route);

@@ -36,7 +36,7 @@ const testimonials = [
 
 const TestimonialCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [moveDirection, setMoveDirection] = useState(null);
+  const [moveDirection, setMoveDirection] = useState('');
 
   const nextSlide = () => {
     setMoveDirection('move-next');
@@ -63,7 +63,7 @@ const TestimonialCarousel = () => {
         </div>
         <div className="testimonial-text-rating">
           <img className="rating" src="res/rating4.svg" alt="" />
-          <p id="tagline-testimonial" class="fulljustify">{testimonials[currentSlide].text}</p>
+          <p id="tagline-testimonial" className="fulljustify">{testimonials[currentSlide].text}</p>
         </div>
       </div>
       <div className="arrows">
