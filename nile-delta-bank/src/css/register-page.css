@@ -1,0 +1,59 @@
+.register-card {
+    width: 75%;
+    height: 58rem;
+    border: 2.5px solid transparent;
+    border-radius: 2.2rem;
+    background: linear-gradient(white, white) padding-box, 
+    linear-gradient(to right, #2350B2 , #2EA6F6) border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.register-icon {
+    width: 60rem;
+    height: auto;
+}
+
+.right-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.gay-part {
+    width: 85%;
+    height: 40%;
+    background-image: linear-gradient(to right, #EF8E8E , #2EA6F6);
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kalam-big {
+    font-family: "outfit";
+    font-weight: 900;
+    font-size: 5rem;
+    color: white;
+    margin-left: 8%;
+    margin: 0;
+}
+
+.kalam-small {
+    font-family: "outfit";
+    font-weight: 100;
+    color: #FFFFFF;
+    margin-left: 8%;
+    font-size: 1.5rem;
+    margin: 0;
+}
+.mini-bank-icon{
+    text-align: right;
+    margin-right: 5%;
+    margin-bottom: 8%;
+}
