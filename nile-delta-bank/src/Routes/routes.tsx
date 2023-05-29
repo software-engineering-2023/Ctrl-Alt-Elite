@@ -8,8 +8,8 @@ import MyAccounts from "../Screens/Client Page/MyAccounts";
 import CreditCards from "../Screens/Client Page/CreditCards";
 import Loans from "../Screens/Client Page/Loans";
 import Notifications from "../Screens/Client Page/Notifications";
-import ReportRequest from "../Screens/Client Page/ReportRequest";
-import Settings from "../Screens/Client Page/Settings";
+import ReportRequest from "../Screens/Report/ReportRequest";
+import Settings from "../Screens/Settings/Settings";
 import PayBills from "../Screens/Client Page/PayBills";
 import BankerPage from "../Screens/Banker Page/BankerPage"
 import AdminPage from "../Screens/Admin Page/AdminPage";
@@ -26,8 +26,7 @@ export const routes = [
     },
     {
         path: Routes.LOGIN_PATH,
-        element: <Login />,
-        parent: <ProtectedRoutes />
+        element: <Login />
     },
     {
         path: Routes.REGISTER_PATH,

@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import * as Routes from '../Routes/paths';
 import { Tabs, notification } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
-import { credit_cards, loans, my_accounts, notifications } from '../data/client-tabs';
+import { credit_cards, loans, my_accounts, notifications, reports, settings } from '../data/client-tabs';
 import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
@@ -59,6 +59,10 @@ function NavMenu({ children }: { children: any }) {
         return my_accounts;
       case Routes.CLIENT_CREDIT_CARDS:
         return credit_cards;
+      case Routes.CLIENT_REPORT:
+        return reports;
+      case Routes.CLIENT_SETTINGS:
+        return settings;
       default:
         return loans;
       // case Routes.CLIENT_LOANS:
@@ -136,7 +140,7 @@ function NavMenu({ children }: { children: any }) {
                 className={activePage === 3 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Pay Bills</a>
             </li>
-            <li className={`list-item ${activePage === 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", loans)}>
+            <li className={`list-item ${activePage == 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", reports)}>
               <img src="/res/Nile Delta Icons/Left Panel/report.svg"
                 className={activePage === 4 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Report an issue</a>
