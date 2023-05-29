@@ -21,8 +21,7 @@ export const routes = [
     },
     {
         path: Routes.LOGIN_PATH,
-        element: <Login />,
-        parent: <ProtectedRoutes />
+        element: <Login />
     },
     {
         path: Routes.REGISTER_PATH,

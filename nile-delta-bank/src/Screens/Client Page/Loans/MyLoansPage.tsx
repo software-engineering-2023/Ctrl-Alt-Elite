@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../../css/client-page.css'
 import { Table } from 'antd';
-import { SortOrder } from 'mongoose';
 
 function MyLoansPage() {
 
@@ -25,7 +24,7 @@ function MyLoansPage() {
       total: <p><span className='bold'>855,000</span> EGP</p>
     },
   ];
-  
+
   const columns = [
     {
       title: 'Description',
@@ -62,15 +61,15 @@ function MyLoansPage() {
       key: 'total',
     }
   ];
-  
-  
+
+
   return (
     <section className="client_section">
       <div className="my_loans_header">
         <h2>My Loans</h2>
         <img src="/res/Nile Delta Icons/add.svg" alt="" />
       </div>
-      <hr className="loan_header_divider"/>
+      <hr className="loan_header_divider" />
       <Table sortDirections={["descend", "ascend"]} dataSource={dataSource} columns={columns} pagination={false} />
     </section>
   )
