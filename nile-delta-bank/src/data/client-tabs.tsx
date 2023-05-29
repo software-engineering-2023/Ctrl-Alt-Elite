@@ -11,6 +11,7 @@ import CreditCardsPage from '../Screens/Client Page/Credit Cards/CreditCardsPage
 import NotificationsPage from '../Screens/Client Page/Notifications/NotificationsPage'
 import ReportRequest from '../Screens/Report/ReportRequest'
 import Settings from '../Screens/Settings/Settings'
+import PayBills from '../Screens/Client Page/Pay Bills/PayBills'
 
 
 export const my_accounts = [
@@ -78,5 +79,13 @@ export const settings = [
     id: 1,
     title: 'Settings',
     page: <Settings/>,
+  },
+]
+
+export const pay_bills_tabs = [
+  {
+    id: 1,
+    title: 'Pay Bills',
+    page: <PayBills/>,
   },
 ]

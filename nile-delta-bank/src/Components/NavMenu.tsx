@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import * as Routes from '../Routes/paths';
 import { Tabs, notification } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
-import { credit_cards, loans, my_accounts, notifications, reports, settings } from '../data/client-tabs';
+import { credit_cards, loans, my_accounts, notifications, reports, settings, pay_bills_tabs } from '../data/client-tabs';
 import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
@@ -63,12 +63,12 @@ function NavMenu({ children }: { children: any }) {
         return reports;
       case Routes.CLIENT_SETTINGS:
         return settings;
+      case Routes.CLIENT_PAY_BILLS:
+        return pay_bills_tabs;
       default:
         return loans;
       // case Routes.CLIENT_LOANS:
       //   return 2;
-      // case Routes.CLIENT_PAY_BILLS:
-      //   return 3;
       // case Routes.CLIENT_REPORT:
       //   return 4;
       // case Routes.CLIENT_SETTINGS:
@@ -135,7 +135,7 @@ function NavMenu({ children }: { children: any }) {
                 className={activePage === 2 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Loans</a>
             </li>
-            <li className={`list-item ${activePage === 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", loans)}>
+            <li className={`list-item ${activePage === 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", pay_bills_tabs)}>
               <img src="/res/Nile Delta Icons/Left Panel/pay-bills.svg"
                 className={activePage === 3 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Pay Bills</a>
@@ -157,7 +157,7 @@ function NavMenu({ children }: { children: any }) {
         <div className="nav_menu_links">
           <ul>
             <li className={`list-item`} onClick={() => navigate(Routes.HOME_PATH)}>
-              <img src="/res/Nile Delta Icons/Left Panel/logout.svg"  />
+              <img src="/res/Nile Delta Icons/Left Panel/logout.svg" />
               <a className="list-item-link">Logout</a>
             </li>
           </ul>
@@ -172,7 +172,7 @@ function NavMenu({ children }: { children: any }) {
             {
               tabItems.map((item: any) => {
                 return <DeltaTabItem
-                  id = {item['id']}
+                  id={item['id']}
                   title={item['title']}
                   active={currentSelect == item['id']}
                   onClick={handleTabClick}

@@ -10,7 +10,7 @@ import Loans from "../Screens/Client Page/Loans";
 import Notifications from "../Screens/Client Page/Notifications";
 import ReportRequest from "../Screens/Report/ReportRequest";
 import Settings from "../Screens/Settings/Settings";
-import PayBills from "../Screens/Client Page/PayBills";
+import PayBills from "../Screens/Client Page/Pay Bills/PayBills";
 import BankerPage from "../Screens/Banker Page/BankerPage"
 import AdminPage from "../Screens/Admin Page/AdminPage";
 
@@ -94,5 +94,5 @@ export const routes = [
         element: <AdminPage />,
         parent: <ProtectedRoutesAdmin />
     }
-   
+
 ]

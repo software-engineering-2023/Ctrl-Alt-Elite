@@ -5,7 +5,7 @@ import creditCardData from '../../../data/credit-card-data';
 import { CreditCardProps } from '../../../components/CustomCreditCard';
 import { useState } from 'react';
 import CustomButton from '../../../components/CustomButton';
-import { Table } from 'antd';
+import { Table, message } from 'antd';
 import { currentAccountData } from '../../../data/allAccountsTransactionData';
 
 function CreditCardsPage() {
@@ -13,7 +13,17 @@ function CreditCardsPage() {
   const [selectedCard, setSelectedCard] = useState(1);
 
   const [showBalance, setShowBalance] = useState(false);
-  
+  const [messageApi, contextHolder] = message.useMessage();
+
+  const [points, setPoints] = useState(99000);
+
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'Redeemed Points Successfully! ',
+    });
+  };
+
   const columns = [
     {
       title: 'Description',
@@ -86,12 +96,17 @@ function CreditCardsPage() {
                     <h1 style={{
                       fontFamily: "outfit", fontWeight: 300, color: "#505050", fontSize: "5rem", margin: 0
                     }}
-                      className={showBalance ? '' : 'blurred-balance'}
+                    // className={showBalance ? '' : 'blurred-balance'}
                     >
-                      437,912 EGP
+                      {points} Points
                     </h1>
-                    <div className="show_button" onClick={() => setShowBalance(!showBalance)}>
-                      {showBalance ? "Hide Balance" : "Show Balance"}
+
+                    <div className="show_button" onClick={() => {
+                      success();
+                      setPoints(prev => prev - 1000);
+                    }}>
+                      {contextHolder}
+                      <p>Redeem Points</p>
                     </div>
                   </div>
                   <hr style={{ marginBottom: 12 }} className="loan_header_divider" />
