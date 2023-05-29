@@ -1,4 +1,4 @@
-  import React from 'react';
+import React from 'react';
 import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
@@ -6,13 +6,15 @@ import * as Routes from '../Routes/paths';
 import { Tabs, notification } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
-import { credit_cards, loans, my_accounts, notifications, reports, settings } from '../data/client-tabs';
+import { view_clients_tabs } from '../data/banker-tabs';
 import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
+import { banker_menues } from '../data/banker-menu';
+
 // import { use } from 'express/lib/router';
 
-function NavMenu({ children }: { children: any }) {
+function NavMenuBanker({ children }: { children: any }) {
   const { isLoggedIn, user } = useSelector((state: RootState) => state.auth);
 
   const getPageTitle = (path: string) => {
@@ -35,36 +37,35 @@ function NavMenu({ children }: { children: any }) {
   }
 
   const getIndex = (path: string) => {
-    switch (path) {
-      case Routes.CLIENT_MY_ACCOUNTS:
-        return 0;
-      case Routes.CLIENT_CREDIT_CARDS:
-        return 1;
-      case Routes.CLIENT_LOANS:
-        return 2;
-      case Routes.CLIENT_PAY_BILLS:
-        return 3;
-      case Routes.CLIENT_REPORT:
-        return 4;
-      case Routes.CLIENT_SETTINGS:
-        return 6;
-      default:
-        return 5;
-    }
+    return 0;
+    // switch (path) {
+    //   case Routes.CLIENT_MY_ACCOUNTS:
+    //     return 0;
+    //   case Routes.CLIENT_CREDIT_CARDS:
+    //     return 1;
+    //   case Routes.CLIENT_LOANS:
+    //     return 2;
+    //   case Routes.CLIENT_PAY_BILLS:
+    //     return 3;
+    //   case Routes.CLIENT_REPORT:
+    //     return 4;
+    //   case Routes.CLIENT_SETTINGS:
+    //     return 6;
+    //   default:
+    //     return 5;
+    // }
   }
 
   const getTabItems = (path: string) => {
     switch (path) {
-      case Routes.CLIENT_MY_ACCOUNTS:
-        return my_accounts;
-      case Routes.CLIENT_CREDIT_CARDS:
-        return credit_cards;
-      case Routes.CLIENT_REPORT:
-        return reports;
-      case Routes.CLIENT_SETTINGS:
-        return settings;
-      default:
-        return loans;
+        default:
+            return view_clients_tabs;
+    //   case Routes.CLIENT_MY_ACCOUNTS:
+    //     return my_accounts;
+    //   case Routes.CLIENT_CREDIT_CARDS:
+    //     return credit_cards;
+    //   default:
+    //     return loans;
       // case Routes.CLIENT_LOANS:
       //   return 2;
       // case Routes.CLIENT_PAY_BILLS:
@@ -120,49 +121,28 @@ function NavMenu({ children }: { children: any }) {
 
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activePage === 0 ? "selected_item" : ""}`} onClick={() => handlePageClick(0, Routes.CLIENT_MY_ACCOUNTS, "My Accounts", my_accounts)}>
-              <img src="/res/Nile Delta Icons/Left Panel/my-accounts.svg"
-                className={activePage === 0 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">My Accounts</a>
-            </li>
-            <li className={`list-item ${activePage === 1 ? "selected_item" : ""}`} onClick={() => handlePageClick(1, Routes.CLIENT_CREDIT_CARDS, "Credit Score: 693", credit_cards)}>
-              <img src="/res/Nile Delta Icons/Left Panel/credit-cards.svg"
-                className={activePage == 1 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Credit Cards</a>
-            </li>
-            <li className={`list-item ${activePage === 2 ? "selected_item" : ""}`} onClick={() => handlePageClick(2, Routes.CLIENT_LOANS, "Loans", loans)}>
-              <img src="/res/Nile Delta Icons/Left Panel/loans.svg"
-                className={activePage === 2 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Loans</a>
-            </li>
-            <li className={`list-item ${activePage === 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", loans)}>
-              <img src="/res/Nile Delta Icons/Left Panel/pay-bills.svg"
-                className={activePage === 3 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Pay Bills</a>
-            </li>
-            <li className={`list-item ${activePage == 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", reports)}>
-              <img src="/res/Nile Delta Icons/Left Panel/report.svg"
-                className={activePage === 4 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Report an issue</a>
-            </li>
-            <li className={`list-item ${activePage === 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", notifications)}>
-              <img src="/res/Nile Delta Icons/Left Panel/notifications.svg"
-                className={activePage === 5 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Notifications</a>
-            </li>
+            {
+                banker_menues.map((item, index) => {
+                    return <li className={`list-item ${activePage === index ? "selected_item" : ""}`} onClick={() => handlePageClick(index, item['route'], item['title'], item['tabs'])}>
+                    <img src={item['icon']}
+                      className={activePage === index ? "selected_item_icon" : ""} alt="" />
+                    <a className="list-item-link">{item['title']}</a>
+                  </li>
+                })
+            }
           </ul>
         </div>
 
         <hr className="divider panel_divider" />
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activePage === 6 ? "selected_item" : ""}`} onClick={() => handlePageClick(6, Routes.CLIENT_SETTINGS, "Settings", loans)}>
+            <li className={`list-item ${activePage === banker_menues.length ? "selected_item" : ""}`} onClick={() => handlePageClick(6, Routes.BANKER_VIEW_CLIENTS, "Settings", view_clients_tabs)}>
               <img src="/res/Nile Delta Icons/Left Panel/settings.svg"
                 className={activePage === 6 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Settings</a>
             </li>
-            <li className={`list-item`} onClick={() => navigate(Routes.HOME_PATH)}>
-              <img src="/res/Nile Delta Icons/Left Panel/logout.svg"  />
+            <li className={`list-item`}>
+              <img src="/res/Nile Delta Icons/Left Panel/logout.svg" alt="" />
               <a className="list-item-link">Logout</a>
             </li>
           </ul>
@@ -195,4 +175,4 @@ function NavMenu({ children }: { children: any }) {
   )
 }
 
-export default NavMenu
+export default NavMenuBanker

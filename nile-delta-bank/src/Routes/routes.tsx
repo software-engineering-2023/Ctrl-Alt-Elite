@@ -11,8 +11,13 @@ import Notifications from "../Screens/Client Page/Notifications";
 import ReportRequest from "../Screens/Report/ReportRequest";
 import Settings from "../Screens/Settings/Settings";
 import PayBills from "../Screens/Client Page/PayBills";
+import BankerPage from "../Screens/Banker Page/BankerPage"
+import AdminPage from "../Screens/Admin Page/AdminPage";
 
 import ProtectedRoutes from "./ProtectedRoutes";
+import ProtectedRoutesBanker from "./ProtectedRoutesBanker";
+import ProtectedRoutesAdmin from "./ProtectedRoutesAdmin";
+
 
 export const routes = [
     {
@@ -68,4 +73,26 @@ export const routes = [
         element: <Settings />,
         parent: <ProtectedRoutes />
     },
+
+    {
+        path: Routes.BANKER_VIEW_CLIENTS,
+        element: <BankerPage />,
+        parent: <ProtectedRoutesBanker />
+    },
+    {
+        path: Routes.BANKER_VIEW_REPORTS,
+        element: <BankerPage />,
+        parent: <ProtectedRoutesBanker />
+    },
+    {
+        path: Routes.BANKER_VIEW_REQUESTS,
+        element: <BankerPage />,
+        parent: <ProtectedRoutesBanker />
+    },
+    {
+        path: Routes.ADMIN_VIEW_REPORTS,
+        element: <AdminPage />,
+        parent: <ProtectedRoutesAdmin />
+    }
+   
 ]

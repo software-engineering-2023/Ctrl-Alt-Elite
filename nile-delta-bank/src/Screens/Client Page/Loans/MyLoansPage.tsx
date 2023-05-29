@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../../css/client-page.css';
 import '../../../css/register-page.css';
-import { Input, Select, Table } from 'antd';
+import { Input, Select, Table, notification } from 'antd';
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from "yup";
@@ -10,6 +10,8 @@ import CustomButton from '../../../components/CustomButton';
 
 function MyLoansPage() {
   const [showForm, setShowForm] = useState(false);
+
+  const [api, contextHolder] = notification.useNotification();
 
   const formik = useFormik({
     initialValues: {
@@ -25,7 +27,7 @@ function MyLoansPage() {
         monthly_payment: Yup.string().required()
     }),
     onSubmit: (values: LoanCreationModel) => {
-      console.log(values.type);
+      showNotification();
     }
 });
 
@@ -102,12 +104,21 @@ function MyLoansPage() {
     formik.setFieldValue('type', value);
   }
 
+  const showNotification = () => {
+    api.open({
+      className: 'font-bold text-blue-400',
+      message: <h1>Congratulations</h1>,
+      description:
+        'This Loan Request has been added, and it will now be reviewed by our experts. Excpect a response in 7-14 days.',
+    });
+  }
 
   return (
     <section className="client_section">
       {
         showForm ? (
           <div className="w-full flex flex-col">
+            {contextHolder}
             <div onClick={() => setShowForm(false)} className="card-num-d flex flex-row items-center gap-x-2">
                 <div>
                   <img className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
@@ -123,7 +134,7 @@ function MyLoansPage() {
               <div className='w-1/2 flex flex-row justify-center gap-x-12'>
                   <div className="w-full">
                     <h2 className="">Type</h2>
-                    <Select className="w-full" defaultValue="Personal Loan" onChange={handleSelect} status={(formik.errors.type) ? "error" : ""} size="large" options={dropdownValues} />
+                    <Select className="w-full" defaultValue="None" onChange={handleSelect} status={(formik.errors.type) ? "error" : ""} size="large" options={dropdownValues} />
                   </div>
                   <div className="w-full">
                     <h2 className="">Loan Amount</h2>

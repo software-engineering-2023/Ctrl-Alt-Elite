@@ -21,33 +21,23 @@ function CreditCardsPage() {
       key: 'description',
     },
     {
-      title: 'Next Due Date',
-      dataIndex: 'next_due_date',
-      key: 'next_due_date',
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
       sorter: (a: any, b: any) => a < b ? -1 : 1,
       showSorterTooltip: false,
     },
     {
-      title: 'Days Left',
-      dataIndex: 'days_left',
-      key: 'days_left',
-      sorter: (a: any, b: any) => a.days_left - b.days_left,
+      title: 'Time',
+      dataIndex: 'time',
+      key: 'time',
+    },
+    {
+      title: 'Amount',
+      dataIndex: 'amount',
+      key: 'amount',
+      sorter: (a: any, b: any) => a < b ? -1 : 1,
       showSorterTooltip: false,
-    },
-    {
-      title: 'Amount Due',
-      dataIndex: 'amount_due',
-      key: 'amount_due',
-    },
-    {
-      title: 'Remaining',
-      dataIndex: 'remaining',
-      key: 'remaining',
-    },
-    {
-      title: 'Total',
-      dataIndex: 'total',
-      key: 'total',
     }
   ];
 

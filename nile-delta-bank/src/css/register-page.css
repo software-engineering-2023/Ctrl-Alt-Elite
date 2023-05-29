@@ -1,11 +1,12 @@
 .register-card {
-    width: 60%;
+    width: 120rem;
     height: 75rem;
-    border: 2.5px solid transparent;
+    border: 0.3rem solid transparent;
     border-radius: 2.2rem;
     background: linear-gradient(white, white) padding-box,
         linear-gradient(to right, #2350B2, #2EA6F6) border-box;
     display: flex;
+    font-family: 'Outfit';
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -16,6 +17,7 @@
     /* flex-grow: 2; */
     width: 60%;
     height: auto;
+    left: -10;
     position: absolute;
 }
 
@@ -54,14 +56,23 @@
     font-weight: 100;
     color: #FFFFFF;
     margin-left: 8%;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0;
 }
 
 .mini-bank-icon {
+    /* position: relative; */
+    height: 5rem;
+    top: 2.5rem;
+    right: 40;
     width: 100%;
     display: flex;
+    margin-top: 4rem;
     justify-content: flex-end;
+}
+
+.mini-bank-icon img{
+    margin-right: 3rem;
 }
 
 .kalam-label {
