@@ -136,12 +136,7 @@ function NavMenuBanker({ children }: { children: any }) {
         <hr className="divider panel_divider" />
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activePage === banker_menues.length ? "selected_item" : ""}`} onClick={() => handlePageClick(6, Routes.BANKER_VIEW_CLIENTS, "Settings", view_clients_tabs)}>
-              <img src="/res/Nile Delta Icons/Left Panel/settings.svg"
-                className={activePage === 6 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Settings</a>
-            </li>
-            <li className={`list-item`}>
+            <li className={`list-item`} onClick={() => navigate(Routes.HOME_PATH)}>
               <img src="/res/Nile Delta Icons/Left Panel/logout.svg" alt="" />
               <a className="list-item-link">Logout</a>
             </li>

@@ -156,11 +156,6 @@ function NavMenu({ children }: { children: any }) {
         <hr className="divider panel_divider" />
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activePage === 6 ? "selected_item" : ""}`} onClick={() => handlePageClick(6, Routes.CLIENT_SETTINGS, "Settings", loans)}>
-              <img src="/res/Nile Delta Icons/Left Panel/settings.svg"
-                className={activePage === 6 ? "selected_item_icon" : ""} alt="" />
-              <a className="list-item-link">Settings</a>
-            </li>
             <li className={`list-item`} onClick={() => navigate(Routes.HOME_PATH)}>
               <img src="/res/Nile Delta Icons/Left Panel/logout.svg"  />
               <a className="list-item-link">Logout</a>
