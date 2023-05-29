@@ -81,7 +81,9 @@ function CreditCardsPage() {
           (
             <div className="w-full flex flex-col gap-y-16">
               <div className="card-num flex flex-row items-center">
-                <img onClick={() => setShowCards(true)} className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
+                <div onClick={() => setShowCards(true)} >
+                  <img className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
+                </div>
                 <h2>
                   {
                     creditCardData.find(item => item.id === selectedCard)?.creditCardNumber
@@ -101,12 +103,6 @@ function CreditCardsPage() {
                     <div className="show_button" onClick={() => setShowBalance(!showBalance)}>
                       {showBalance ? "Hide Balance" : "Show Balance"}
                     </div>
-                    {/* <CustomButton
-                      type="button"
-                      body={showBalance ? "Hide Balance" : "Show Balance"}
-                      style="px-24 h-18 py-0 bodia-border"
-                      handleClick={() => setShowBalance(!showBalance)}
-                    /> */}
                   </div>
                   <hr style={{ marginBottom: 12 }} className="loan_header_divider" />
                   <div className='w-full flex flex-row justify-end'>

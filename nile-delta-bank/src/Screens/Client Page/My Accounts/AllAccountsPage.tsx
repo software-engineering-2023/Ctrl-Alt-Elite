@@ -109,7 +109,7 @@ function AllAccountsPage() {
           ) : (
             <div className="w-full flex flex-col gap-y-16">
               <div className="card-num flex flex-row items-center gap-x-16">
-                <div style={{zIndex:-5}} onClick={() => setShowSavingAccounts(true)}>
+                <div onClick={() => setShowSavingAccounts(true)}>
                   <img className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
                 </div>
                 <h2>
