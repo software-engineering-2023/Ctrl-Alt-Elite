@@ -1,8 +1,13 @@
 import React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
+import '../data/client-tabs';
+import { credit_cards, loans, my_accounts } from '../data/client-tabs';
+import DeltaTabItem from './DeltaTabItem';
 // import { use } from 'express/lib/router';
 
 function NavMenu({ children }: { children: any }) {
@@ -44,16 +49,47 @@ function NavMenu({ children }: { children: any }) {
     }
   }
 
-  const [activeTab, setActiveTab] = useState(getIndex(window.location.pathname));
-  const [pageTitle, setPageTitle] = useState(getPageTitle(window.location.pathname));
-  const navigate = useNavigate();
-
-  const handleTabClick = (index: number, route: string, newTitle: string) => {
-    setActiveTab(index);
-    setPageTitle(newTitle);
-    navigate(route);
+  const getTabItems = (path: string) => {
+    switch (path) {
+      case Routes.CLIENT_MY_ACCOUNTS:
+        return my_accounts;
+      case Routes.CLIENT_CREDIT_CARDS:
+        return credit_cards;
+      default:
+        return loans;
+      // case Routes.CLIENT_LOANS:
+      //   return 2;
+      // case Routes.CLIENT_PAY_BILLS:
+      //   return 3;
+      // case Routes.CLIENT_REPORT:
+      //   return 4;
+      // case Routes.CLIENT_SETTINGS:
+      //   return 6;
+      // default:
+      //   return 5;
+    }
   }
 
+  const [activePage, setActivePage] = useState(getIndex(window.location.pathname));
+  const [pageTitle, setPageTitle] = useState(getPageTitle(window.location.pathname));
+  const [tabItems, setTabItems] = useState(getTabItems(window.location.pathname));
+  const [currentSelect, setCurrentSelect] = useState(1);
+  const navigate = useNavigate();
+
+  const handlePageClick = (index: number, route: string, newTitle: string, tabItems: any[]) => {
+    if (route !== window.location.pathname) {
+      setActivePage(index);
+      setPageTitle(newTitle);
+      setTabItems(tabItems);
+      setCurrentSelect(1);
+      navigate(route);
+    }
+  }
+
+  const handleTabClick = (index: number) => {
+    setCurrentSelect(index);
+    console.log("clicking: " + index);
+  }
 
   return (
     <div className="main_page">
@@ -74,34 +110,34 @@ function NavMenu({ children }: { children: any }) {
 
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activeTab === 0 ? "selected_item" : ""}`} onClick={() => handleTabClick(0, Routes.CLIENT_MY_ACCOUNTS, "My Accounts")}>
+            <li className={`list-item ${activePage === 0 ? "selected_item" : ""}`} onClick={() => handlePageClick(0, Routes.CLIENT_MY_ACCOUNTS, "My Accounts", my_accounts)}>
               <img src="/res/Nile Delta Icons/Left Panel/my-accounts.svg"
-                className={activeTab === 0 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 0 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">My Accounts</a>
             </li>
-            <li className={`list-item ${activeTab === 1 ? "selected_item" : ""}`} onClick={() => handleTabClick(1, Routes.CLIENT_CREDIT_CARDS, "Credit Score: 693")}>
+            <li className={`list-item ${activePage === 1 ? "selected_item" : ""}`} onClick={() => handlePageClick(1, Routes.CLIENT_CREDIT_CARDS, "Credit Score: 693", credit_cards)}>
               <img src="/res/Nile Delta Icons/Left Panel/credit-cards.svg"
-                className={activeTab === 1 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 1 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Credit Cards</a>
             </li>
-            <li className={`list-item ${activeTab === 2 ? "selected_item" : ""}`} onClick={() => handleTabClick(2, Routes.CLIENT_LOANS, "Loans")}>
+            <li className={`list-item ${activePage === 2 ? "selected_item" : ""}`} onClick={() => handlePageClick(2, Routes.CLIENT_LOANS, "Loans", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/loans.svg"
-                className={activeTab === 2 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 2 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Loans</a>
             </li>
-            <li className={`list-item ${activeTab === 3 ? "selected_item" : ""}`} onClick={() => handleTabClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills")}>
+            <li className={`list-item ${activePage === 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/pay-bills.svg"
-                className={activeTab === 3 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 3 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Pay Bills</a>
             </li>
-            <li className={`list-item ${activeTab === 4 ? "selected_item" : ""}`} onClick={() => handleTabClick(4, Routes.CLIENT_REPORT, "Report an issue")}>
+            <li className={`list-item ${activePage === 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/report.svg"
-                className={activeTab === 4 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 4 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Report an issue</a>
             </li>
-            <li className={`list-item ${activeTab === 5 ? "selected_item" : ""}`} onClick={() => handleTabClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications")}>
+            <li className={`list-item ${activePage === 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/notifications.svg"
-                className={activeTab === 5 ? "selected_item_icon" : ""} alt="" />
+                className={activePage === 5 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Notifications</a>
             </li>
           </ul>
@@ -110,9 +146,9 @@ function NavMenu({ children }: { children: any }) {
         <hr className="divider panel_divider" />
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activeTab === 6 ? "selected_item" : ""}`} onClick={() => handleTabClick(6, Routes.CLIENT_SETTINGS, "Settings")}>
+            <li className={`list-item ${activePage == 6 ? "selected_item" : ""}`} onClick={() => handlePageClick(6, Routes.CLIENT_SETTINGS, "Settings", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/settings.svg"
-                className={activeTab === 6 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 6 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Settings</a>
             </li>
             <li className={`list-item`}>
@@ -129,7 +165,7 @@ function NavMenu({ children }: { children: any }) {
           <hr className="divider" />
         </div>
         <div className="main_page_right_body scrollable_body">
-          {children}
+          {tabItems[currentSelect - 1]['page']}
         </div>
       </div>
     </div>
