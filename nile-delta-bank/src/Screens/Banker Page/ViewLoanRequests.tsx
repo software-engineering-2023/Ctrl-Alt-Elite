@@ -3,7 +3,7 @@ import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useState } from "react";
 
-const ViewAllRequests = () => {
+const ViewLoanRequests = () => {
     interface StatusStatesType {
         key: string,
         value: string
@@ -133,4 +133,4 @@ const ViewAllRequests = () => {
     )
 }
 
-export default ViewAllRequests;
+export default ViewLoanRequests;
