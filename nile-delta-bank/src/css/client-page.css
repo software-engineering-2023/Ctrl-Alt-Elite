@@ -72,6 +72,7 @@
 
 .back-icon {
   filter: invert(29%) sepia(64%) saturate(3894%) hue-rotate(217deg) brightness(73%) contrast(87%);
+  z-index: -5;
 }
 
 .back-icon:hover {

@@ -12,6 +12,7 @@ function CreditCardRequestsPage() {
         card_requests.map((request, index) => {
           return (
             <RequestItem
+              key={index}
               request_number={request.request_number}
               submit_date={request.submit_date}
               current={request.current}

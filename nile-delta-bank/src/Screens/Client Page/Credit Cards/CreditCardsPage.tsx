@@ -16,21 +16,17 @@ function CreditCardsPage() {
   const dataSource = [
     {
       key: '1',
-      description: 'Business Loan',
-      next_due_date: '01-06-2023',
-      days_left: '4',
-      amount_due: <p><span className='bold'>175,000</span> EGP</p>,
-      remaining: <p><span className='bold'>175,000</span> EGP</p>,
-      total: <p><span className='bold'>700,000</span> EGP</p>,
+      description: 'Business Loan Withdrawal',
+      date: '01-06-2023',
+      time:'8:23:42',
+      amount: <p><span className='bold'>175,000</span> EGP</p>,
     },
     {
       key: '2',
-      description: 'Car Loan',
-      next_due_date: '01-02-2024',
-      days_left: '249',
-      amount_due: <p><span className='bold'>171,000</span> EGP</p>,
-      remaining: <p><span className='bold'>342,000</span> EGP</p>,
-      total: <p><span className='bold'>855,000</span> EGP</p>
+      description: 'Car Loan Withdrawal',
+      date: '01-02-2023',  
+      time:'22:17:42',
+      amount: <p><span className='bold'>171,000</span> EGP</p>,
     },
   ];
   
@@ -41,33 +37,23 @@ function CreditCardsPage() {
       key: 'description',
     },
     {
-      title: 'Next Due Date',
-      dataIndex: 'next_due_date',
-      key: 'next_due_date',
+      title: 'Date',
+      dataIndex: 'date',
+      key: 'date',
       sorter: (a: any, b: any) => a < b ? -1 : 1,
       showSorterTooltip: false,
     },
     {
-      title: 'Days Left',
-      dataIndex: 'days_left',
-      key: 'days_left',
-      sorter: (a: any, b: any) => a.days_left - b.days_left,
+      title: 'Time',
+      dataIndex: 'time',
+      key: 'time',
+    },
+    {
+      title: 'Amount',
+      dataIndex: 'amount',
+      key: 'amount',
+      sorter: (a: any, b: any) => a < b ? -1 : 1,
       showSorterTooltip: false,
-    },
-    {
-      title: 'Amount Due',
-      dataIndex: 'amount_due',
-      key: 'amount_due',
-    },
-    {
-      title: 'Remaining',
-      dataIndex: 'remaining',
-      key: 'remaining',
-    },
-    {
-      title: 'Total',
-      dataIndex: 'total',
-      key: 'total',
     }
   ];
 
@@ -112,7 +98,7 @@ function CreditCardsPage() {
                 <div className='w-full '>
                   <div className="w-full flex flex-row justify-between">
                     <h1 style={{
-                      fontFamily:"outfit", fontWeight:300, color: "#505050", fontSize:"5rem", margin:0
+                      fontFamily:"outfit", fontWeight:300, color: "#505050", fontSize:"5rem", margin:0, zIndex:-5
                     }} 
                     className={showBalance ? '' : 'blurred-balance'}
                     >

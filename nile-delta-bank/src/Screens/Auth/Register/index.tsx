@@ -45,7 +45,7 @@ const Register = () => {
                 <div className="right-section">
                     <div className="gay-part">
                         <div className="mini-bank-icon">
-                            <img className="mr-16 mt-2" src="res/registeration/Mini-Bank-Logo.svg" />
+                            <img src="res/registeration/Mini-Bank-Logo.svg" />
                         </div>
                         <div style={{ marginLeft: "4rem", marginBottom: "4rem" }}>
                             <h1 className="kalam-big">Registration</h1>

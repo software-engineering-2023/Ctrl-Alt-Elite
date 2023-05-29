@@ -10,3 +10,9 @@ export const CLIENT_PAY_BILLS = "/client/pay-bills";
 export const CLIENT_REPORT = "/client/report";
 export const CLIENT_NOTIFICATIONS = "/client/notifications";
 export const CLIENT_SETTINGS = "/client/settings";
+
+export const BANKER_VIEW_CLIENTS = "/banker/view-clients";
+export const BANKER_VIEW_REPORTS = "/banker/view-reports";
+export const BANKER_VIEW_REQUESTS = "/banker/view-requests";
+
+export const ADMIN_VIEW_REPORTS = "/admin/view-reports";
