@@ -31,10 +31,12 @@ const ReportRequest = () => {
           <Select
             showSearch
             placeholder="Select an issue"
+            size='large'
             optionFilterProp="children"
             filterOption={(input, option) =>
               (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
+
             options={[
               {
                 value: 'Credit Card Theft',
@@ -55,7 +57,7 @@ const ReportRequest = () => {
             ]}
           />
           <div className="description-label">
-            <label>Description: </label>
+            <h2>Description</h2>
           </div>
           <div className="text-area">
             <textarea name="" id="" placeholder="Write A Description"></textarea>
