@@ -3,10 +3,11 @@ import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
-import { Tabs } from 'antd';
+import { Tabs, notification } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
-import { credit_cards, loans, my_accounts } from '../data/client-tabs';
+import { credit_cards, loans, my_accounts, notifications } from '../data/client-tabs';
+import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
 // import { use } from 'express/lib/router';
@@ -115,34 +116,34 @@ function NavMenu({ children }: { children: any }) {
 
         <div className="nav_menu_links">
           <ul>
-            <li className={`list-item ${activePage === 0 ? "selected_item" : ""}`} onClick={() => handlePageClick(0, Routes.CLIENT_MY_ACCOUNTS, "My Accounts", my_accounts)}>
+            <li className={`list-item ${activePage == 0 ? "selected_item" : ""}`} onClick={() => handlePageClick(0, Routes.CLIENT_MY_ACCOUNTS, "My Accounts", my_accounts)}>
               <img src="/res/Nile Delta Icons/Left Panel/my-accounts.svg"
-                className={activePage === 0 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 0 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">My Accounts</a>
             </li>
-            <li className={`list-item ${activePage === 1 ? "selected_item" : ""}`} onClick={() => handlePageClick(1, Routes.CLIENT_CREDIT_CARDS, "Credit Score: 693", credit_cards)}>
+            <li className={`list-item ${activePage == 1 ? "selected_item" : ""}`} onClick={() => handlePageClick(1, Routes.CLIENT_CREDIT_CARDS, "Credit Score: 693", credit_cards)}>
               <img src="/res/Nile Delta Icons/Left Panel/credit-cards.svg"
-                className={activePage === 1 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 1 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Credit Cards</a>
             </li>
-            <li className={`list-item ${activePage === 2 ? "selected_item" : ""}`} onClick={() => handlePageClick(2, Routes.CLIENT_LOANS, "Loans", loans)}>
+            <li className={`list-item ${activePage == 2 ? "selected_item" : ""}`} onClick={() => handlePageClick(2, Routes.CLIENT_LOANS, "Loans", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/loans.svg"
-                className={activePage === 2 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 2 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Loans</a>
             </li>
-            <li className={`list-item ${activePage === 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", loans)}>
+            <li className={`list-item ${activePage == 3 ? "selected_item" : ""}`} onClick={() => handlePageClick(3, Routes.CLIENT_PAY_BILLS, "Pay Bills", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/pay-bills.svg"
-                className={activePage === 3 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 3 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Pay Bills</a>
             </li>
-            <li className={`list-item ${activePage === 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", loans)}>
+            <li className={`list-item ${activePage == 4 ? "selected_item" : ""}`} onClick={() => handlePageClick(4, Routes.CLIENT_REPORT, "Report an issue", loans)}>
               <img src="/res/Nile Delta Icons/Left Panel/report.svg"
-                className={activePage === 4 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 4 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Report an issue</a>
             </li>
-            <li className={`list-item ${activePage === 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", loans)}>
+            <li className={`list-item ${activePage == 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", notifications)}>
               <img src="/res/Nile Delta Icons/Left Panel/notifications.svg"
-                className={activePage === 5 ? "selected_item_icon" : ""} alt="" />
+                className={activePage == 5 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Notifications</a>
             </li>
           </ul>
@@ -168,6 +169,19 @@ function NavMenu({ children }: { children: any }) {
         <div className="main_page_header">
           <h1 className="main_page_right_body">{pageTitle}</h1>
           <hr className="divider" />
+          <div className="tab_section">
+            {
+              tabItems.map((item: any) => {
+                return <DeltaTabItem
+                  id = {item['id']}
+                  title={item['title']}
+                  active={currentSelect == item['id']}
+                  onClick={handleTabClick}
+                />
+              })
+            }
+          </div>
+          <hr className="divider divider_bottom" />
         </div>
         <div className="main_page_right_body scrollable_body">
           {tabItems[currentSelect - 1]['page']}
