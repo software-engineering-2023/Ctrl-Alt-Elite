@@ -40,7 +40,7 @@ const Register = () => {
         <div style={{ width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div className="register-card">
                 <div className="register-icon">
-                    <img src="res/registeration/login-illustration.svg" />
+                    <img className="icon-nafso" src="res/registeration/login-illustration.svg" />
                 </div>
                 <div className="right-section">
                     <div className="gay-part">
@@ -55,43 +55,43 @@ const Register = () => {
                     <div className="w-full h-full flex flex-col items-center justify-center pl-44">
                         <form className="w-full" onSubmit={formik.handleSubmit}>
                             <div className="w-full flex flex-col items-center justify-center gap-y-6">
-                                <div className="w-2/3 flex flex-row justify-between">
-                                    <div className="w-64">
+                                <div className="w-3/4 flex flex-row justify-between gap-x-16">
+                                    <div className="w-72">
                                         <h1 className="kalam-label">First Name</h1>
                                         <Input name="first_name" value={formik.values.first_name} onChange={formik.handleChange} status={(formik.errors.first_name) ? "error" : ""} size="large" placeholder="First name" />
                                     </div>
-                                    <div className="w-64">
+                                    <div className="w-72">
                                         <h1 className="kalam-label">Last Name</h1>
                                         <Input name="last_name" value={formik.values.last_name} onChange={formik.handleChange} status={(formik.errors.last_name) ? "error" : ""} size="large" placeholder="Last name" />
                                     </div>
                                 </div>
-                                <div className="w-2/3">
+                                <div className="w-3/4">
                                     <h1 className="kalam-label">Email</h1>
                                     <Input type="email" name="email" value={formik.values.email} onChange={formik.handleChange} status={(formik.errors.email) ? "error" : ""} size="large" placeholder="name@example.com" />
                                 </div>
-                                <div className="w-2/3">
+                                <div className="w-3/4">
                                     <h1 className="kalam-label">Password</h1>
                                     <Input type="password" name="password" value={formik.values.password} onChange={formik.handleChange} status={(formik.errors.password) ? "error" : ""} size="large" placeholder="********" />
                                 </div>
-                                <div className="w-2/3">
+                                <div className="w-3/4">
                                     <h1 className="kalam-label">Confirm Password</h1>
                                     <Input type="password" name="confirm_password" value={formik.values.confirm_password} onChange={formik.handleChange} status={(formik.errors.confirm_password) ? "error" : ""} size="large" placeholder="********" />
                                 </div>
                                 <CustomButton
                                     type="submit"
                                     body="Sign Up"
-                                    style="w-2/3 rounded-xl p-6 bodia-gradient"
+                                    style="w-3/4 rounded-xl p-6 bodia-gradient"
                                 />
-                                <div className="w-2/3 flex flex-row items-center justify-center gap-x-2">
+                                <div className="w-3/4 flex flex-row items-center justify-center gap-x-2">
                                     <div className="bg-black h-0.5 w-2/3" > </div>
                                     <p className="bodia-kalam">or</p>
                                     <div className="bg-black h-0.5 w-2/3" > </div>
                                 </div>
-                                <div className="bodia-border w-2/3 h-20 rounded-xl flex flex-row items-center justify-center gap-x-6">
+                                <div className="bodia-border w-3/4 h-20 rounded-xl flex flex-row items-center justify-center gap-x-6">
                                     <img src="/res/google-icon.svg" />
                                     <p className="bodia-kalam-2 text-black">Sign Up With Google</p>
                                 </div>
-                                <div className="w-2/3 flex flex-row justify-center">
+                                <div className="w-3/4 flex flex-row justify-center">
                                     <p className="text-2xl text-black">Already have an account? Sign in
                                     </p>
                                     <a className="text-2xl text-blue-500 underline mx-2 text-left" href="/login">here</a>
