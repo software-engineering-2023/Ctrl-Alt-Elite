@@ -2,7 +2,7 @@ import React from 'react';
 import NavMenu from '../../components/NavMenu';
 // import {useFormik} from 'formik';
 
-const ReportRequest = () => {
+const Settings = () => {
   // const formik = useFormik({
   //   initialValues: {
   //     firstName: '',
@@ -10,8 +10,8 @@ const ReportRequest = () => {
   //   }
   // });
   return <div>
-      <p style={{marginTop: 50}}>Report Request Body</p>
+    <p style={{ marginTop: 50 }}>Settings Body</p>
   </div>;
 }
 
-export default ReportRequest;
+export default Settings;
