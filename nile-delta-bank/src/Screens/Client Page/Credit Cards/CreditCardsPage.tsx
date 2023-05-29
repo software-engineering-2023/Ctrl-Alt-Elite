@@ -33,7 +33,7 @@ function CreditCardsPage() {
       total: <p><span className='bold'>855,000</span> EGP</p>
     },
   ];
-  
+
   const columns = [
     {
       title: 'Description',
@@ -79,28 +79,28 @@ function CreditCardsPage() {
       <hr className="loan_header_divider" />
 
       {
-          showCards ? (
-            <div className="credit_card_items">
-              {
-                creditCardData.map((props: any) => {
-                  return (
-                    <CustomCreditCard
-                      key={props.id}
-                      creditCardNum={props.creditCardNumber}
-                      type={props.type}
-                      onClick={() => {
-                        setShowCards(false);
-                        setSelectedCard(props.id)
-                      }}
-                    />
-                  );
-                })
-              }
-            </div>
-       ): 
+        showCards ? (
+          <div className="credit_card_items">
+            {
+              creditCardData.map((props: any) => {
+                return (
+                  <CustomCreditCard
+                    key={props.id}
+                    creditCardNum={props.creditCardNumber}
+                    type={props.type}
+                    onClick={() => {
+                      setShowCards(false);
+                      setSelectedCard(props.id)
+                    }}
+                  />
+                );
+              })
+            }
+          </div>
+        ) :
           (
             <div className="w-full flex flex-col gap-y-16">
-              <div className="card-num flex flex-row items-center gap-x-16">
+              <div className="card-num flex flex-row items-center">
                 <img onClick={() => setShowCards(true)} className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
                 <h2>
                   {
@@ -112,20 +112,23 @@ function CreditCardsPage() {
                 <div className='w-full '>
                   <div className="w-full flex flex-row justify-between">
                     <h1 style={{
-                      fontFamily:"outfit", fontWeight:300, color: "#505050", fontSize:"5rem", margin:0
-                    }} 
-                    className={showBalance ? '' : 'blurred-balance'}
+                      fontFamily: "outfit", fontWeight: 300, color: "#505050", fontSize: "5rem", margin: 0
+                    }}
+                      className={showBalance ? '' : 'blurred-balance'}
                     >
-                    437,912 EGP
+                      437,912 EGP
                     </h1>
-                    <CustomButton 
+                    <div className="show_button" onClick={() => setShowBalance(!showBalance)}>
+                      {showBalance ? "Hide Balance" : "Show Balance"}
+                    </div>
+                    {/* <CustomButton
                       type="button"
                       body={showBalance ? "Hide Balance" : "Show Balance"}
                       style="px-24 h-18 py-0 bodia-border"
                       handleClick={() => setShowBalance(!showBalance)}
-                    />
+                    /> */}
                   </div>
-                  <hr style={{marginBottom:12}} className="loan_header_divider" />
+                  <hr style={{ marginBottom: 12 }} className="loan_header_divider" />
                   <div className='w-full flex flex-row justify-end'>
                     <p>
                       {
@@ -137,8 +140,8 @@ function CreditCardsPage() {
               </div>
               <div className="ml-28 flex flex-col items-start">
                 <h1 style={{
-                      fontFamily:"outfit", fontWeight:300, color: "#505050", fontSize:"5rem", margin:0
-                    }}
+                  fontFamily: "outfit", fontWeight: 300, color: "#505050", fontSize: "5rem", margin: 0
+                }}
                 >
                   Transactions
                 </h1>
