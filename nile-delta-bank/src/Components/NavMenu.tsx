@@ -3,10 +3,10 @@ import { useEffect, useRef, useState, ReactElement } from 'react';
 import '../css/nav-menu.css';
 import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
-import { Tabs } from 'antd';
+import { Tabs, notification } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
-import { credit_cards, loans, my_accounts } from '../data/client-tabs';
+import { credit_cards, loans, my_accounts, notifications } from '../data/client-tabs';
 import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
@@ -139,7 +139,7 @@ function NavMenu({ children }: { children: any }) {
                 className={activePage == 4 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Report an issue</a>
             </li>
-            <li className={`list-item ${activePage == 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", loans)}>
+            <li className={`list-item ${activePage == 5 ? "selected_item" : ""}`} onClick={() => handlePageClick(5, Routes.CLIENT_NOTIFICATIONS, "Notifications", notifications)}>
               <img src="/res/Nile Delta Icons/Left Panel/notifications.svg"
                 className={activePage == 5 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Notifications</a>
