@@ -2,8 +2,12 @@ import '../../css/landing-page.css';
 import React, { useState } from 'react';
 import TestimonialCarousel from '../../components/TestimonialCarousel';
 import about_text from '../../data/about';
+import { useNavigate } from 'react-router-dom';
+import { REGISTER_PATH } from '../../Routes/paths';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   const [currentAbout, setCurrentAbout] = useState(0);
   const [fader, setFader] = useState("fadeIn");
   
@@ -26,7 +30,7 @@ const LandingPage = () => {
         <div style={{display:"flex",flexDirection:"row",justifyContent:"center"}}>
             <div className="join-login">
                 <p className="slogan">Online Banking Made Easy.</p>
-                <button className="button join-button">JOIN NOW</button>
+                <button className="button join-button" onClick={() => navigate(REGISTER_PATH)}>JOIN NOW</button>
                 <button className="button login-button">LOGIN</button>
             </div>
         </div>
