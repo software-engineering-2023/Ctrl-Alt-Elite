@@ -3,7 +3,7 @@ import { Space, Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useState } from "react";
 
-const ViewAllRequests = () => {
+const ViewCreditRequests = () => {
     interface StatusStatesType {
         key: string,
         value: string
@@ -96,34 +96,34 @@ const ViewAllRequests = () => {
     const data: DataType[] = [
         {
             key: '1',
-            requestID: '3498',
+            requestID: '238',
             name: 'John Brown',
             description: 'Loan money Req',
-            type: 'Loan',
+            type: 'Credit',
             status: statusStates[0].value
         },
         {
             key: '2',
-            requestID: '38',
+            requestID: '12',
             name: 'Jim Green',
             description: 'I need money',
-            type: 'Loan',
+            type: 'Credit',
             status: statusStates[1].value
         },
         {
             key: '3',
-            requestID: '324',
+            requestID: '1239',
             name: 'Joe Black',
             description: 'Loan Plz??',
-            type: 'Loan',
+            type: 'Credit',
             status: statusStates[2].value
         },
         {
             key: '4',
-            requestID: '31',
+            requestID: '400',
             name: 'Seif',
             description: 'Loan',
-            type: 'Loan',
+            type: 'Credit',
             status: statusStates[3].value
         }
     ];
@@ -133,4 +133,4 @@ const ViewAllRequests = () => {
     )
 }
 
-export default ViewAllRequests;
+export default ViewCreditRequests;
