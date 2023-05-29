@@ -9,6 +9,8 @@ import CreditCardRequestsPage from '../Screens/Client Page/Credit Cards/CreditCa
 import CreditCardsPage from '../Screens/Client Page/Credit Cards/CreditCardsPage'
 
 import NotificationsPage from '../Screens/Client Page/Notifications/NotificationsPage'
+import ReportRequest from '../Screens/Report/ReportRequest'
+import Settings from '../Screens/Settings/Settings'
 
 
 export const my_accounts = [
@@ -60,5 +62,21 @@ export const notifications = [
     id: 1,
     title: 'All Notifications',
     page: <NotificationsPage />,
+  },
+]
+
+export const reports = [
+  {
+    id: 1,
+    title: 'Report an Issue',
+    page: <ReportRequest />,
+  },
+]
+
+export const settings = [
+  {
+    id: 1,
+    title: 'Settings',
+    page: <Settings/>,
   },
 ]
