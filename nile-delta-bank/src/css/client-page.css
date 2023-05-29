@@ -70,8 +70,19 @@
   font-weight: 400;
 }
 
+.card-num-d {
+  color: #2350B2;
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+
+.card-num-d:hover {
+  cursor: pointer;
+}
+
 .back-icon {
   filter: invert(29%) sepia(64%) saturate(3894%) hue-rotate(217deg) brightness(73%) contrast(87%);
+  z-index: -5;
 }
 
 .back-icon:hover {
