@@ -1,7 +1,10 @@
-import { LOGIN_USER, LOGOUT_USER } from "../types";
+import { LOGIN_USER, LOGOUT_USER, REGISTER_USER } from "../types";
 
 const initialState = {
-    user: {},
+    user: {
+        first_name: 'client',
+        last_name: 'x'
+    },
     isLoggedIn: false,
 };
 
@@ -18,6 +21,12 @@ export const authReducer = (state = initialState, action: any) => {
                 ...state,
                 user: {},
                 isLoggedIn: false,
+            };
+        case REGISTER_USER:
+            return {
+                ...state,
+                user: action.payload,
+                isLoggedIn: true
             };
         default:
             return state;

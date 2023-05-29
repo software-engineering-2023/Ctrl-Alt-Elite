@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import UserRegistrationModel from "../../../models/userRegistrationModel";
 import CustomButton from "../../../components/CustomButton";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAction } from "../../../redux/actions/loginAction";
+import { registerAction } from "../../../redux/actions/registerAction";
 import { RootState } from "../../../redux";
 import { Navigate } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Register = () => {
             confirm_password: Yup.string().oneOf([Yup.ref("password")], "Passwords must match").required("Required"),
         }),
         onSubmit: (values: UserRegistrationModel) => {
-            dispatch(loginAction({ email: values.email, password: values.password }));
+            dispatch(registerAction({ email: values.email, password: values.password, first_name: values.first_name }));
         }
     });
 
