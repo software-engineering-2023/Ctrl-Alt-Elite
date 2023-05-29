@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Routes from '../Routes/paths';
 // import { use } from 'express/lib/router';
 
-function NavMenu({ children }: {children: any}) {
+function NavMenu({ children }: { children: any }) {
   const getPageTitle = (path: string) => {
     switch (path) {
       case Routes.CLIENT_MY_ACCOUNTS:
@@ -126,7 +126,7 @@ function NavMenu({ children }: {children: any}) {
       <div className="main_page_right">
         <div className="main_page_header">
           <h1 className="main_page_right_body">{pageTitle}</h1>
-          <hr className="divider"/>
+          <hr className="divider" />
         </div>
         <div className="main_page_right_body scrollable_body">
           {children}
