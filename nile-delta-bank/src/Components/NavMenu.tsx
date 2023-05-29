@@ -7,7 +7,6 @@ import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
 import '../data/client-tabs';
 import { credit_cards, loans, my_accounts } from '../data/client-tabs';
-import DeltaTabItem from './DeltaTabItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
 // import { use } from 'express/lib/router';
@@ -102,12 +101,14 @@ function NavMenu({ children }: { children: any }) {
           <img src="/res/banner-white.svg" alt="banner" />
         </div>
 
-        <div className="profile-image">
-          <img src="/res/youssef-hany.svg" alt="" />
-          <div className="profile_element">
-            <h1>{ user.email }</h1>
-            <div className="edit-button">
-              <p>Edit</p>
+        <div className="profile-box">
+          <div className="profile-image">
+            <img src="/res/youssef-hany.svg" alt="" />
+            <div className="profile_element">
+              <h1>{user.first_name} {user.last_name}</h1>
+              <div className="edit-button">
+                <p>Edit</p>
+              </div>
             </div>
           </div>
         </div>

@@ -157,6 +157,12 @@ select {
   background-color: rgba(0, 0, 0, 7%);
 }
 
+.profile-box {
+  display: flex;
+  justify-content: start;
+  margin-left: 7rem;
+}
+
 .profile-image img {
   /* margin-bottom: 5rem; */
   height: 12rem;

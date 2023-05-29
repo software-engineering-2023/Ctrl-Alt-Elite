@@ -8,3 +8,4 @@ export const loginAction = (user: any) => (dispatch: Dispatch) => {
         payload: user,
     });
 };
+
