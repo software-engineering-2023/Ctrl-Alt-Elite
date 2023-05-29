@@ -68,5 +68,5 @@ export const routes = [
         element: <Settings />,
         parent: <ProtectedRoutes />
     },
-   
+
 ]
