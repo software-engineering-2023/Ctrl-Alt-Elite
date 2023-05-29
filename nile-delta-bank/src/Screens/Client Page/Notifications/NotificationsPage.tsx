@@ -1,8 +1,16 @@
 import React from 'react'
 import '../../../css/client-page.css'
 import { Table } from 'antd';
+import type { ColumnsType, TableProps } from 'antd/es/table';
 
 function NotificationsPage() {
+
+  interface DataType {
+    key: React.Key;
+    type: string;
+    time: string;
+    notification: string;
+  }
 
   const dataSource = [
     {
@@ -31,34 +39,49 @@ function NotificationsPage() {
     },
   ];
   
-  const columns = [
+  const columns: ColumnsType<DataType> = [
     {
       title: 'Type',
       dataIndex: 'type',
       key: 'type',
-      sorter: (a: any, b: any) => a < b ? -1 : 1,
+      sorter: (a, b) => a.type.localeCompare(b.type),
       showSorterTooltip: false,
+      filters: [
+        {
+          text: 'Loan',
+          value: 'Loan',
+        },
+        {
+          text: 'Transfer',
+          value: 'Transfer',
+        },
+      ],
+      filterMode: undefined, // or 'tree' or 'menu'
+      filterSearch: true,
+      onFilter: (value: string | number | boolean, record: DataType) =>
+      String(record.type).startsWith(String(value)),
+      width: '30%',
     },
     {
       title: 'Time',
       dataIndex: 'time',
       key: 'time',
-      sorter: (a: any, b: any) => a < b ? -1 : 1,
+      sorter: (a: DataType, b: DataType) => (a.time < b.time ? -1 : 1),
       showSorterTooltip: false,
     },
     {
       title: 'Notification',
       dataIndex: 'notification',
-      key: 'notification'
-    }
-  ];
+      key: 'notification',
+    },
+  ];  
   
   
   return (
     <section className="client_section">
       <div className="my_loans_header">
         <h2>Notifications</h2>
-        <img src="/res/Nile Delta Icons/add.svg" alt="" />
+        {/* <img src="/res/Nile Delta Icons/add.svg" alt="" /> */}
       </div>
       <hr className="loan_header_divider"/>
       <Table sortDirections={["descend", "ascend"]} dataSource={dataSource} columns={columns} pagination={false} />

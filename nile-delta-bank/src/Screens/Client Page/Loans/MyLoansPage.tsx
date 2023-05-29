@@ -1,8 +1,44 @@
 import React from 'react'
-import '../../../css/client-page.css'
-import { Table } from 'antd';
+import '../../../css/client-page.css';
+import '../../../css/register-page.css';
+import { Input, Select, Table } from 'antd';
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from "yup";
+import LoanCreationModel from '../../../models/loanRequestModel';
+import CustomButton from '../../../components/CustomButton';
 
 function MyLoansPage() {
+  const [showForm, setShowForm] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+        type: '',
+        loan_amount: '',
+        car_model: '',
+        monthly_payment: ''
+    },
+    validationSchema: Yup.object({
+        type: Yup.string().required(),
+        loan_amount: Yup.string().required(),
+        car_model: Yup.string(),
+        monthly_payment: Yup.string().required()
+    }),
+    onSubmit: (values: LoanCreationModel) => {
+      console.log(values.type);
+    }
+});
+
+  const dropdownValues = [
+    {
+      value: 'Personal Loan',
+      label: 'Personal Loan'
+    },
+    {
+      value: 'Car Loan',
+      label: 'Car Loan'
+    }
+  ]
 
   const dataSource = [
     {
@@ -62,15 +98,67 @@ function MyLoansPage() {
     }
   ];
 
+  const handleSelect = (value: string) => {
+    formik.setFieldValue('type', value);
+  }
+
 
   return (
     <section className="client_section">
-      <div className="my_loans_header">
-        <h2>My Loans</h2>
-        <img src="/res/Nile Delta Icons/add.svg" alt="" />
-      </div>
-      <hr className="loan_header_divider" />
-      <Table sortDirections={["descend", "ascend"]} dataSource={dataSource} columns={columns} pagination={false} />
+      {
+        showForm ? (
+          <div className="w-full flex flex-col">
+            <div onClick={() => setShowForm(false)} className="card-num-d flex flex-row items-center gap-x-2">
+                <div>
+                  <img className="back-icon w-16 h-16" src="/res/Nile Delta Icons/back-arrow.svg" />
+                </div>
+                <h2>
+                  Back
+                </h2>
+            </div>
+            <form className='w-full' onSubmit={formik.handleSubmit}>
+             <div className="w-full flex flex-col items-center">
+              <h1 style={{margin:0}}>Create Loan Request</h1>
+              <hr className="loan_header_divider" />
+              <div className='w-1/2 flex flex-row justify-center gap-x-12'>
+                  <div className="w-full">
+                    <h2 className="">Type</h2>
+                    <Select className="w-full" defaultValue="Personal Loan" onChange={handleSelect} status={(formik.errors.type) ? "error" : ""} size="large" options={dropdownValues} />
+                  </div>
+                  <div className="w-full">
+                    <h2 className="">Loan Amount</h2>
+                    <Input type="text" name="loan_amount" value={formik.values.loan_amount} onChange={formik.handleChange} status={(formik.errors.loan_amount) ? "error" : ""} size="large" placeholder="100,000 EGP" />
+                  </div>
+              </div>
+              <div className='w-1/2 mt-12 flex flex-row justify-center gap-x-12'>
+                  <div className="w-full">
+                    <h2 className="">Car Model</h2>
+                    <Input type="text" name="car_model" value={formik.values.car_model} onChange={formik.handleChange} status={(formik.errors.car_model) ? "error" : ""} size="large" placeholder="BMW 320i" />
+                  </div>
+                  <div className="w-full">
+                    <h2 className="">Monthly Payment</h2>
+                    <Input type="text" name="monthly_payment" value={formik.values.monthly_payment} onChange={formik.handleChange} status={(formik.errors.monthly_payment) ? "error" : ""} size="large" placeholder="10,000 EGP" />
+                  </div>
+              </div>
+              <CustomButton
+                body="Submit"
+                type="submit"
+                style='mt-12 bodia-border p-8 w-64'
+              />
+             </div>
+            </form>
+          </div>
+        ) : (
+          <>
+          <div className="my_loans_header">
+          <h2>My Loans</h2>
+          <div onClick={() => setShowForm(true)}><img src="/res/Nile Delta Icons/add.svg" alt="" /></div>
+          </div>
+          <hr className="loan_header_divider" />
+          <Table sortDirections={["descend", "ascend"]} dataSource={dataSource} columns={columns} pagination={false} />
+        </>
+        )
+      }
     </section>
   )
 }
