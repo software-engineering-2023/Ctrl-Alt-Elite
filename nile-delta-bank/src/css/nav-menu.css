@@ -247,7 +247,7 @@ select {
 }
 
 .scrollable_body {
-  margin-top: 33rem;
+  margin-top: 32rem;
 }
 
 .tab_section {
@@ -277,9 +277,11 @@ select {
 .delta_tab_item:hover {
   cursor: pointer;
   color: rgba(0, 0, 0, 50%);
+  /* transform: translateY(-0.1rem); */
 }
 
 .delta_tab_item_active, .delta_tab_item_active:hover {
   color: #2350B2;
   border-bottom: 0.2rem solid #2350B2;
+  /* transform: translateY(0); */
 }
