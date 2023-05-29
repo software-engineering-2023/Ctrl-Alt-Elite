@@ -161,8 +161,8 @@ function NavMenu({ children }: { children: any }) {
                 className={activePage == 6 ? "selected_item_icon" : ""} alt="" />
               <a className="list-item-link">Settings</a>
             </li>
-            <li className={`list-item`}>
-              <img src="/res/Nile Delta Icons/Left Panel/logout.svg" alt="" />
+            <li className={`list-item`} onClick={() => navigate(Routes.HOME_PATH)}>
+              <img src="/res/Nile Delta Icons/Left Panel/logout.svg"  />
               <a className="list-item-link">Logout</a>
             </li>
           </ul>

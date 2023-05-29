@@ -1,15 +1,18 @@
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { Input, Checkbox } from "antd";
+import { Input, Checkbox, notification } from "antd";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import UserLoginModel from "../../../models/userLoginModel";
 import CustomButton from "../../../components/CustomButton";
 import { loginAction } from "../../../redux/actions/loginAction";
 import "../../../css/login-page.css";
+import { useState } from "react";
 
 const Login = () => {
     const dispatch: any = useDispatch();
+
+    const [userType, setUserType] = useState("/client/my-accounts");
 
     const { user, isLoggedIn } = useSelector((state: any) => state.auth);
 
@@ -20,22 +23,28 @@ const Login = () => {
         },
         validationSchema: Yup.object({
             email: Yup.string().email("Invalid email address").required("Required"),
-            password: Yup.string().min(8).required("Required"),
+            password: Yup.string().min(1).required("Required"),
         }),
         onSubmit: (values: UserLoginModel) => {
+            if (values.email === "admin@admin.com" && values.password === "admin") {
+                setUserType("/admin/view-reports");
+            }
+            else if (values.email === "client@client.com" && values.password === "client") {
+                setUserType("/client/my-accounts");
+            }
+            else if (values.email === "banker@banker.com" && values.password === "banker") {
+                setUserType("/banker/view-reports");
+            }
             dispatch(loginAction({ email: values.email, password: values.password }));
         }
     });
 
-    const handleLogin = () => {
-
-    }
 
     return (
         <>
             {
                 isLoggedIn ? (
-                    <Navigate to="/" />
+                    <Navigate to={userType} />
                 ) : (
                     <>
                         <div style={{ width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -92,7 +101,7 @@ const Login = () => {
                                                     <div className="w-3/4 flex flex-row justify-center">
                                                         <p className="text-2xl text-black">Don't have an account? Sign up
                                                         </p>
-                                                        <a className="text-2xl text-blue-500 underline mx-2 text-left" href="/login">here</a>
+                                                        <a className="text-2xl text-blue-500 underline mx-2 text-left" href="/register">here</a>
                                                     </div>
                                                 </div>
                                             </form>
