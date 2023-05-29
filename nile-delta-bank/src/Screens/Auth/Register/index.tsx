@@ -36,7 +36,7 @@ const Register = () => {
     });
 
     return (
-        isLoggedIn ? <Navigate to="/" /> :
+        isLoggedIn ? <Navigate to="/client" /> :
         <div style={{ width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div className="register-card">
                 <div className="register-icon">

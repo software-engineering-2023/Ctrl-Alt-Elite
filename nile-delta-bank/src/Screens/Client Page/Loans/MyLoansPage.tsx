@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../../css/client-page.css'
 import { Table } from 'antd';
-import { SortOrder } from 'mongoose';
 
 function MyLoansPage() {
 
