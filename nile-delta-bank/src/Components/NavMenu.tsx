@@ -8,9 +8,13 @@ import type { TabsProps } from 'antd';
 import '../data/client-tabs';
 import { credit_cards, loans, my_accounts } from '../data/client-tabs';
 import DeltaTabItem from './DeltaTabItem';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux';
 // import { use } from 'express/lib/router';
 
 function NavMenu({ children }: { children: any }) {
+  const { isLoggedIn, user } = useSelector((state: RootState) => state.auth);
+
   const getPageTitle = (path: string) => {
     switch (path) {
       case Routes.CLIENT_MY_ACCOUNTS:
@@ -101,7 +105,7 @@ function NavMenu({ children }: { children: any }) {
         <div className="profile-image">
           <img src="/res/youssef-hany.svg" alt="" />
           <div className="profile_element">
-            <h1>Youssef Hany</h1>
+            <h1>{ user.email }</h1>
             <div className="edit-button">
               <p>Edit</p>
             </div>

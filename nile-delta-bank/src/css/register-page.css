@@ -1,5 +1,5 @@
 .register-card {
-    width: 75%;
+    width: 60%;
     height: 75rem;
     border: 2.5px solid transparent;
     border-radius: 2.2rem;
@@ -9,19 +9,24 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .register-icon {
-    width: 60rem;
+    /* flex-grow: 2; */
+    width: 60%;
     height: auto;
+    position: absolute;
 }
 
 .right-section {
+    flex-grow: 1;
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-left: 40%;
 }
 
 .gay-part {
